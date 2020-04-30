@@ -1,0 +1,14 @@
+.headerNav {
+    display: flex;
+    flex-direction: row;
+}
+
+.logoutButton {
+    margin-left: 85%;
+}
+
+.routerDiv {
+    display: flex;
+    flex-direction: row;
+}
+

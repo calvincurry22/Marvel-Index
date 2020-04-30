@@ -53,7 +53,7 @@ const Register = props => {
     return (
         <div className="container--login">
             <form className="form--register" onSubmit={handleRegister}>
-                <h4 className="darkgray">If you are not a customer yet, please register a new account</h4>
+                <h4 className="darkgray">If you do not have an account yet, please register below</h4>
                 <fieldset>
                     <label htmlFor="name"> Name </label>
                     <input ref={name} type="text"
