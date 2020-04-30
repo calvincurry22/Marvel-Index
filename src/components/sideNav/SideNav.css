@@ -2,3 +2,10 @@
     display: flex;
     flex-direction: column;
 }
+
+.sideNavContainer {
+    background-color: grey;
+    height: 680px;
+    width: 15%;
+    
+}

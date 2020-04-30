@@ -1,14 +1,24 @@
 .headerNav {
+    background-color: lightslategrey;
     display: flex;
     flex-direction: row;
 }
 
 .logoutButton {
+    height: 40%;
     margin-left: 85%;
+    margin-top: 30px;
+}
+
+.routeContainer {
+    background-color: lightgray;
+    width: 85%;
 }
 
 .routerDiv {
     display: flex;
     flex-direction: row;
 }
+
+
 

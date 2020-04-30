@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import Dashboard from "./Dashboard"
-import Auth from "./components/auth/Auth"
-import { UserProvider } from "./components/users/UserProvider"
+import Auth from "./auth/Auth"
+
 
 
 export default () => {

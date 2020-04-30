@@ -1,13 +1,13 @@
 import React, { useContext, useState } from "react"
 import { Button, DropdownToggle, DropdownMenu, DropdownItem, Dropdown, ButtonDropdown } from "reactstrap"
-import SideNav from "./components/sideNav/SideNav"
-import ComicsExplorer from "./components/comics/ComicsExplorer"
-import Forum from "./components/forum/Forum"
+import SideNav from "./sideNav/SideNav"
+import ComicsExplorer from "./comics/ComicsExplorer"
+import Forum from "./forum/Forum"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
-import ReadingList from "./components/comics/ReadingList"
-import { UserContext } from "./components/users/UserProvider"
+import ReadingList from "./comics/ReadingList"
+import { UserContext } from "./users/UserProvider"
 import "./Dashboard.css"
-import "./components/sideNav/SideNav.css"
+import "./sideNav/SideNav.css"
 
 
 
