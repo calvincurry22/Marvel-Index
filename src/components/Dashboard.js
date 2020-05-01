@@ -8,6 +8,7 @@ import ReadingList from "./comics/ReadingList"
 import "./comics/CharacterSearchResults.css"
 import "./Dashboard.css"
 import "./sideNav/SideNav.css"
+import ComicsList from "./comics/ComicsList"
 
 
 
@@ -32,7 +33,7 @@ export default ({logout}) => {
                         <SideNav />
                             <div className="routeContainer">
                                 <Switch>
-                                    <Route path="/" exact component={ReadingList} />
+                                    <Route path="/" exact component={ComicsList} />
                                     <Route path="/comicsExplorer" component={ComicsExplorer} />
                                     <Route path="/forum" component={Forum} />
                                 </Switch>

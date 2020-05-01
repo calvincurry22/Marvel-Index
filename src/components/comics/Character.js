@@ -7,8 +7,10 @@ export default ({ characterObj }) => {
 
     const [modal, setModal] = useState(false)
     const toggle = () => setModal(!modal)
-
+    
+    const { addComic } = useContext(CharacterContext)
     const [selectedComic, setSelectedComic] = useState({comic: {id:0}})
+    const currentUserId = parseInt(localStorage.getItem("marvel_user"))
 
     const imageSource = `${characterObj.thumbnail.path}/portrait_incredible.${characterObj.thumbnail.extension}`
     const comicsArray = characterObj.comicInfo  
@@ -58,6 +60,13 @@ export default ({ characterObj }) => {
                                     <ModalFooter>
                                         <Button color="danger" onClick={() => {
                                             // removeComic(selectedComic.comic.id)
+                                            addComic({
+                                                userId: currentUserId,
+                                                title: selectedComic.comic.title,
+                                                image: selectedComic.comic.images[0].path,
+                                                purchaseUrl: selectedComic.comic.urls[1].url,
+                                                comidId: selectedComic.comic.id
+                                            })
                                             toggle()
                                         }}>Add</Button>
                                     </ModalFooter>

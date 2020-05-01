@@ -14,10 +14,22 @@ export const CharacterProvider = (props) => {
             .then(setCharacters)
     }
 
-    const getComics = charID => {
-        return fetch(`https://gateway.marvel.com:443/v1/public/characters/${charID}/comics?limit=20&apikey=6d001b15224bd9411b67705ef5d04bb5`)
-            .then(response => response.json())
+    const getAddedComics = () => {
+        return fetch("http://localhost:8090/userLists")
+            .then(res => res.json())
             .then(setComics)
+    }
+
+    
+    const addComic = comic => {
+        return fetch("http://localhost:8090/userLists", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(comic)
+        })
+            .then(getAddedComics)
     }
 
 
@@ -34,13 +46,22 @@ export const CharacterProvider = (props) => {
         getCharacters()
     }, [])
 
+    useEffect( () => {
+        getAddedComics()
+    },[])
+
+
     useEffect(() => {
         console.log("****  CHARACTER APPLICATION STATE CHANGED  ****")
     }, [characters])
 
+    useEffect(() => {
+        console.log("****  MY-LIST APPLICATION STATE CHANGED  ****")
+    }, [comics])
+
     return (
         <CharacterContext.Provider value={{
-            characters, comics, setComics, getComics, selectedComic, setSelectedComic, getSelectedComic
+            characters, comics, addComic
         }}>
             {props.children}
         </CharacterContext.Provider>

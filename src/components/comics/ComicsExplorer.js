@@ -18,8 +18,10 @@ export default () => {
     )
 
     const showCharacter = () => (
-        
-        <Character key={selectedCharacter.character.id} characterObj={selectedCharacter.character} />
+        <CharacterProvider>
+
+            <Character key={selectedCharacter.character.id} characterObj={selectedCharacter.character} />
+        </CharacterProvider>
         
     )
 
