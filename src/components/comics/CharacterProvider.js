@@ -31,7 +31,13 @@ export const CharacterProvider = (props) => {
         })
             .then(getAddedComics)
     }
-
+    
+    const deleteComic = comicId => {
+        return fetch(`http://localhost:8090/userLists/${comicId}`, {
+            method: "DELETE"
+        })
+            .then(getAddedComics)
+    }
 
     const getSelectedComic = singleComicId => {
         return fetch(`https://gateway.marvel.com:443/v1/public/comics/${singleComicId}?apikey=6d001b15224bd9411b67705ef5d04bb5`)
@@ -61,7 +67,7 @@ export const CharacterProvider = (props) => {
 
     return (
         <CharacterContext.Provider value={{
-            characters, comics, addComic
+            characters, comics, addComic, deleteComic
         }}>
             {props.children}
         </CharacterContext.Provider>

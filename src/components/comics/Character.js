@@ -41,6 +41,7 @@ export default ({ characterObj }) => {
                                                 <div>
                                                     <a className="fakeLink href:hover" onClick={evt => {
                                                         console.log(comic)
+                                                        evt.preventDefault()
                                                         setSelectedComic({comic})
                                                         toggle()
                                                         
@@ -58,8 +59,9 @@ export default ({ characterObj }) => {
                                         Add {selectedComic.comic.title} to reading list?
                                     </ModalBody>
                                     <ModalFooter>
-                                        <Button color="danger" onClick={() => {
+                                        <Button color="danger" onClick={evt => {
                                             // removeComic(selectedComic.comic.id)
+                                            evt.preventDefault()
                                             addComic({
                                                 userId: currentUserId,
                                                 title: selectedComic.comic.title,
