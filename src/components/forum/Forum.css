@@ -31,5 +31,22 @@
 .forumTextArea {
     height:auto;
     padding-top: 0px;
+}
+
+.postButton {
+    margin-left: 5px;
     
+}
+
+.postMessageContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.forumPageHeader {
+    text-align: center;
+}
+
+.forumPageContainer {
+    text-align: left;
 }

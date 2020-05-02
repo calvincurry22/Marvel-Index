@@ -4,8 +4,8 @@ import { ForumProvider } from "./ForumProvider"
 import { UserProvider } from "../users/UserProvider"
 import "./Forum.css"
 export default () => (
-    <div>
-    <h1>Forum</h1>
+    <div className="forumPageContainer">
+    <h1 className="forumPageHeader">Forum</h1>
     <ForumProvider>
         <UserProvider>
 

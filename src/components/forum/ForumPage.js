@@ -16,9 +16,9 @@ export default () => {
     return (
         <div>
 
-            <fieldset>
+            <fieldset className="postMessageContainer">
                 <textarea placeholder="type comment here..." rows="4" cols="50" ref={text}/>
-                <Button onClick={evt => {
+                <Button className="postButton" onClick={evt => {
                     addForumPost({
                         userId: currentUserId,
                         message: text.current.value,
