@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ButtonAppBar() {
+export const ButtonAppBar = ({logout}) => {
   const classes = useStyles();
 
   return (
@@ -33,7 +33,9 @@ export default function ButtonAppBar() {
           <Typography variant="h4" className={classes.title}>
             Marvel Index
           </Typography>
-          <Button color="inherit">Logout</Button>
+          <Button color="inherit" onclick={evt => {
+            return logout()
+          }}>Logout</Button>
         </Toolbar>
       </AppBar>
     </div>

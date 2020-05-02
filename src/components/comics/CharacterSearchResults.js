@@ -36,7 +36,7 @@ export const CharacterSearchResults = ({ searchTerms, setCharacter, setActiveLis
                             const image = `${character.thumbnail.path}.${character.thumbnail.extension}`
                         return (
                                 <ListGroupItem
-                                    className="fakeLink href listGroupItem"
+                                    className="fakeLink href"
                                     onClick={ evt => {
                                         
                                         setCharacter({character})
