@@ -7,8 +7,9 @@
 }
 
 .href {
-    color: #479cf7d3;
-    text-decoration: underline;
+    /* color: #479cf7d3; */
+    color: black;
+    /* text-decoration: underline; */
 }
 
 .href:hover {
@@ -34,6 +35,7 @@ a {
 
 .search {
     display: inline-block;
+    width: 255.29px;
 }
 
 .resultsHeader {
@@ -47,4 +49,25 @@ a {
 .imageDescriptionContainer {
     display: flex;
     flex-direction: row;
+}
+
+.characters {
+    border-radius: 5px;
+    height: 550px;
+    overflow-y: auto;
+    width: 255.29px;
+
+}
+
+.listGroup {
+    background-color: white;
+    overflow-y: auto;
+}
+
+.searchBox {
+    width: 255.29px;
+}
+
+.searchBarFieldset {
+    height: 42px;
 }
