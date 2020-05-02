@@ -21,7 +21,7 @@ export default ({logout}) => {
     
         <div className="mainContainer">
             
-            <nav className="headerNav">
+            {/* <nav className="headerNav">
                 <h1>Marvel Index</h1>
                 
                 <button className="logoutButton" onClick={evt => {
@@ -29,8 +29,8 @@ export default ({logout}) => {
                 }}>
                     Logout
                 </button>
-            </nav>
-            
+            </nav> */}
+            <ButtonAppBar />
             <Router>
                     <div className="routerDiv">
                         <SideNav />

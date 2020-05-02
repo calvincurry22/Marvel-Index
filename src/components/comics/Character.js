@@ -34,7 +34,7 @@ export default ({ characterObj }) => {
                     <h2 className="comicsHeader">Associated Comics</h2>
                         
                             <div className="comicDetailsContainer">
-                                <div>
+                                <div className="comics">
                                     {
                                         comicsArray.map(comic => {
                                             return (

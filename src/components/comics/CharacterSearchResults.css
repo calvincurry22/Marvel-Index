@@ -39,3 +39,12 @@ a {
 .resultsHeader {
     display: inline-block;
 }
+
+.comics {
+    overflow-y: auto;
+}
+
+.imageDescriptionContainer {
+    display: flex;
+    flex-direction: row;
+}

@@ -38,15 +38,15 @@ export default () => {
     return(
 
         <div className="comicSearchContainer">
+            <div className="listDisplay">
+                {components}
+            </div>
             <div className="searchContainer">
 
                 <CharacterProvider>
                     <CharacterSearchBar setTerms={setTerms} selectedCharacter={selectedCharacter}/>
                     <CharacterSearchResults searchTerms={searchTerms} setCharacter={setCharacter} setActiveList={setActiveList} />
                 </CharacterProvider>
-            </div>
-            <div className="listDisplay">
-                {components}
             </div>
             <div className="characterPanelContainer"></div>
         </div>
