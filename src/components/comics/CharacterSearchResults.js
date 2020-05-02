@@ -3,11 +3,12 @@ import { CharacterContext } from "./CharacterProvider"
 import Character from "./Character"
 import "./CharacterSearchResults.css"
 import { ListGroup, ListGroupItem } from "reactstrap"
-import { ListItem } from "@material-ui/core"
+import { Avatar } from "@material-ui/core"
+
 
 export const CharacterSearchResults = ({ searchTerms, setCharacter, setActiveList }) => {
     const { characters } = useContext(CharacterContext)
-
+    
     const [filteredCharacters, setFiltered] = useState([])
     // const [selectedCharacter, setCharacter] = useState([])
     // const [selectedComics, setComics] = useState([])
@@ -32,16 +33,17 @@ export const CharacterSearchResults = ({ searchTerms, setCharacter, setActiveLis
                 <ListGroup className="listGroup" >
                     {
                         filteredCharacters.map(character => {
+                            const image = `${character.thumbnail.path}.${character.thumbnail.extension}`
                         return (
                                 <ListGroupItem
-                                    className="fakeLink href"
+                                    className="fakeLink href listGroupItem"
                                     onClick={ evt => {
                                         
                                         setCharacter({character})
                                         setActiveList("characterSelected")
                                         
                                     }}
-                                >{character.name}</ListGroupItem>
+                                ><Avatar src={image} /> {character.name}</ListGroupItem>
                             )
                         })
                     }
