@@ -41,7 +41,7 @@ export default () => {
             <div className="searchContainer">
 
                 <CharacterProvider>
-                    <CharacterSearchBar setTerms={setTerms} />
+                    <CharacterSearchBar setTerms={setTerms} selectedCharacter={selectedCharacter}/>
                     <CharacterSearchResults searchTerms={searchTerms} setCharacter={setCharacter} setActiveList={setActiveList} />
                 </CharacterProvider>
             </div>

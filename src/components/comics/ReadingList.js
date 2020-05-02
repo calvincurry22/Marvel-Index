@@ -2,5 +2,5 @@ import React from "react"
 
 
 export default () => (
-    <h1>Search Comics Here</h1>
+    <h1 className="comicsListPlaceholder">Search Comics Here</h1>
 )

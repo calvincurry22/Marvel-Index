@@ -9,6 +9,8 @@ import "./comics/CharacterSearchResults.css"
 import "./Dashboard.css"
 import "./sideNav/SideNav.css"
 import ComicsList from "./comics/ComicsList"
+import ButtonAppBar from "./nav/Nav"
+
 
 
 
@@ -21,6 +23,7 @@ export default ({logout}) => {
             
             <nav className="headerNav">
                 <h1>Marvel Index</h1>
+                
                 <button className="logoutButton" onClick={evt => {
                     logout()
                 }}>

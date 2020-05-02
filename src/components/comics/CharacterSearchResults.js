@@ -25,7 +25,7 @@ export const CharacterSearchResults = ({ searchTerms, setCharacter, setActiveLis
 
     return (
         <div className="searchResults">
-            <h3>Results</h3>
+            <h3 className="resultsHeader">Results</h3>
             <div className="characters">
                 {
                     filteredCharacters.map(character => {

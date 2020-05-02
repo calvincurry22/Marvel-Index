@@ -1,4 +1,10 @@
 .searchContainer {
     display: flex;
+    flex-direction: column;
+}
+
+
+.comicSearchContainer {
+    display: flex;
     flex-direction: row;
 }

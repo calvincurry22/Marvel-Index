@@ -35,3 +35,7 @@ a {
 .search {
     display: inline-block;
 }
+
+.resultsHeader {
+    display: inline-block;
+}
