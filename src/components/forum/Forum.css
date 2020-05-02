@@ -1,0 +1,35 @@
+.forumPost {
+    display: inline-block;
+    height: auto;
+    margin-top: 10px;
+    width: 70%;
+    word-wrap: break-word;
+}
+
+.postContainer {
+    text-align: center;
+    overflow-y: auto;
+    height: 500px;
+}
+
+/* .postContent {
+    display: flex;
+    flex-direction: row;
+} */
+
+/* .postDateMessage {
+    display: flex;
+    flex-direction: column;
+    
+} */
+.postHeader {
+    font-size: 12px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.forumTextArea {
+    height:auto;
+    padding-top: 0px;
+    
+}

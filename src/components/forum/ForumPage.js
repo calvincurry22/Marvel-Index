@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from "react"
+import React, { useContext, useRef, useState, useEffect } from "react"
 import { ForumContext } from "./ForumProvider"
 import ForumPost from "./ForumPost"
 import { Button } from "reactstrap"
@@ -9,18 +9,20 @@ export default () => {
     const { addForumPost } = useContext(ForumContext)
     const currentUserId = parseInt(localStorage.getItem("marvel_user"))
     const text = useRef()
-    
-
+    const sortedForumPosts = forumPosts.sort((a, b) => b.date - a.date)
+        
+    console.log(sortedForumPosts)
+        
     return (
         <div>
 
             <fieldset>
-                <input type="file" />
-                <input className="forumTextArea" placeholder="type comment" type="textarea" ref={text} />
+                <textarea placeholder="type comment here..." rows="4" cols="50" ref={text}/>
                 <Button onClick={evt => {
                     addForumPost({
                         userId: currentUserId,
-                        message: text.current.value
+                        message: text.current.value,
+                        date: Date.now()
                     })
                 }}>Post Message</Button>
             </fieldset>
@@ -28,7 +30,7 @@ export default () => {
             <div className="postContainer">
                 
                 {
-                    forumPosts.map(post => {
+                    sortedForumPosts.map(post => {
                         return <ForumPost post={post} />
                     })
                 }
