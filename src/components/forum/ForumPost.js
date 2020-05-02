@@ -11,11 +11,13 @@ export default ({post}) => {
 
     return (
         <div>
-           <Card>
-                <CardContent>
-                    <h5>{foundUser.userName}</h5>
-                    <p>{convertedDate}</p>
-                    <p>{post.message}</p>
+           <Card className="forumPost">
+                <CardContent className="postContent">
+                    <p className="postHeader">{foundUser.userName}</p>
+                    <p className="postDate">{convertedDate}</p>
+                    <div className="postDateMessage">
+                        <p className="postMessage">{post.message}</p>
+                    </div>
                 </CardContent>
             </Card> 
         </div>
