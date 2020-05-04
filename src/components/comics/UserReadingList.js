@@ -15,7 +15,7 @@ export default () => {
                 filteredComics.map( comicObj => {
                     return (
                         <div>
-                            <a href={comicObj.purchaseUrl} target="_blank"><img src={comicObj.image} alt="comic_image"/></a>
+                            <a href={comicObj.purchaseUrl} target="_blank" rel="noopener noreferrer"><img src={comicObj.image} alt="comic_image"/></a>
                             <h4>{comicObj.title}</h4>
                             <Button onClick={evt => {
                                 evt.preventDefault()

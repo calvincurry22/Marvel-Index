@@ -10,6 +10,7 @@ import "./Dashboard.css"
 import "./sideNav/SideNav.css"
 import ComicsList from "./comics/ComicsList"
 import { ButtonAppBar } from "./nav/ButtonAppBar"
+import { ForumGroupsProvider } from "./forum/ForumGroupsProvider"
 
 
 
@@ -39,7 +40,9 @@ export default ({logout}) => {
                                 <Switch>
                                     <Route path="/" exact component={ComicsList} />
                                     <Route path="/comicsExplorer" component={ComicsExplorer} />
-                                    <Route path="/forum" component={Forum} />
+                                    <ForumGroupsProvider>
+                                        <Route path="/forum" component={Forum} />
+                                    </ForumGroupsProvider>
                                 </Switch>
                             </div>
                     </div>

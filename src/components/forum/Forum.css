@@ -50,3 +50,34 @@
 .forumPageContainer {
     text-align: left;
 }
+
+.fakeLink {
+    background: none!important;
+    border: none;
+    font-family: arial, sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+h5 {
+    background: none!important;
+    border: none;
+    font-family: arial, sans-serif;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.href {
+    /* color: #479cf7d3; */
+    color: black;
+    /* text-decoration: underline; */
+}
+
+.href:hover {
+    color: #007bff;
+}
+
+.fakeLink:focus {
+    outline: 0;
+}
