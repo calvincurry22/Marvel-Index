@@ -11,6 +11,11 @@ import "./sideNav/SideNav.css"
 import ComicsList from "./comics/ComicsList"
 import { ButtonAppBar } from "./nav/ButtonAppBar"
 import { ForumGroupsProvider } from "./forum/ForumGroupsProvider"
+import { UserProvider } from "./users/UserProvider"
+import AccountEditForm from "./account/AccountEditForm"
+import { CharacterProvider } from "./comics/CharacterProvider"
+import { ForumProvider } from "./forum/ForumProvider"
+
 
 
 
@@ -20,36 +25,47 @@ export default ({logout}) => {
     
     
     return (
-    
-        <div className="mainContainer">
-            
-            <nav className="headerNav">
-                <h1>Marvel Index</h1>
+        <>
+            <div className="mainContainer">
                 
-                <button className="logoutButton" onClick={evt => {
-                    logout()
-                }}>
-                    Logout
-                </button>
-            </nav>
-            {/* <ButtonAppBar logout={logout} /> */}
-            <Router>
+                <nav className="headerNav">
+                    <h1>Marvel Index</h1>
+                    
+                    <button className="logoutButton" onClick={evt => {
+                        logout()
+                    }}>
+                        Logout
+                    </button>
+                </nav>
+                
+                <Router>
                     <div className="routerDiv">
                         <SideNav />
-                            <div className="routeContainer">
-                                <Switch>
-                                    <Route path="/" exact component={ComicsList} />
-                                    <Route path="/comicsExplorer" component={ComicsExplorer} />
-                                    <ForumGroupsProvider>
-                                        <Route path="/forum" component={Forum} />
-                                    </ForumGroupsProvider>
-                                </Switch>
-                                    <Redirect to="/" />
-                            </div>
-                    </div>
-            </Router>
+                        <div className="routeContainer">
+                            <Switch>
+                                <ForumGroupsProvider>
+                                    <CharacterProvider>
+                                        <ForumProvider>
+                                            <UserProvider>
 
-        </div>
+                                                <Route path="/" exact component={ComicsList} />
+                                                <Route path="/comicsExplorer" component={ComicsExplorer} />
+                                                <Route path="/forum" component={Forum} />
+                                                <Route path="/account" exact component={AccountEditForm} />
+                                            </UserProvider>
+
+                                        </ForumProvider>
+                                    </CharacterProvider>
+
+                                </ForumGroupsProvider>
+                                <Redirect to="/" />
+                            </Switch>                          
+                        </div>
+                    </div>
+                </Router>
+
+            </div>
+        </>
     )  
 }
 
