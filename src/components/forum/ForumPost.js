@@ -10,7 +10,7 @@ export default ({post}) => {
    
 
     return (
-        <div>
+        <div className="forumPostContainer">
            <Card className="forumPost">
                 <CardContent className="postContent">
                     <p className="postHeader">{foundUser.userName}</p>
