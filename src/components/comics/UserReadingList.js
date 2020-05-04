@@ -20,7 +20,7 @@ export default () => {
                             <Button onClick={evt => {
                                 evt.preventDefault()
                                 deleteComic(comicObj.id)
-                            }}></Button>
+                            }}>Remove</Button>
                         </div>
                     )
                 })

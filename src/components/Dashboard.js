@@ -3,7 +3,7 @@ import React from "react"
 import SideNav from "./sideNav/SideNav"
 import ComicsExplorer from "./comics/ComicsExplorer"
 import Forum from "./forum/Forum"
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom"
 import ReadingList from "./comics/ReadingList"
 import "./comics/CharacterSearchResults.css"
 import "./Dashboard.css"
@@ -44,6 +44,7 @@ export default ({logout}) => {
                                         <Route path="/forum" component={Forum} />
                                     </ForumGroupsProvider>
                                 </Switch>
+                                    <Redirect to="/" />
                             </div>
                     </div>
             </Router>
