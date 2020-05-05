@@ -18,10 +18,10 @@ export default () => {
     )
 
     const showCharacter = () => (
-        <CharacterProvider>
+        
 
             <Character key={selectedCharacter.character.id} characterObj={selectedCharacter.character} />
-        </CharacterProvider>
+        
         
     )
 
@@ -43,10 +43,10 @@ export default () => {
             </div>
             <div className="searchContainer">
 
-                <CharacterProvider>
+                {/* <CharacterProvider> */}
                     <CharacterSearchBar setTerms={setTerms} selectedCharacter={selectedCharacter}/>
                     <CharacterSearchResults searchTerms={searchTerms} setCharacter={setCharacter} setActiveList={setActiveList} />
-                </CharacterProvider>
+                {/* </CharacterProvider> */}
             </div>
             <div className="characterPanelContainer"></div>
         </div>

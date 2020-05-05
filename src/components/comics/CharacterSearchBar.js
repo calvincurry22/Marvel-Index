@@ -19,7 +19,7 @@ export const CharacterSearchBar = ({ setTerms }) => {
                     autoFocus
                     className="form-control searchBox"
                 />
-                <i class="fas fa-book-reader"></i>
+                <i className="fas fa-book-reader"></i>
             </div>
         </fieldset>
     )

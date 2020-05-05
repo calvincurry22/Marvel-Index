@@ -37,12 +37,12 @@ export default () => {
                     toggle()
                 }}>Create Forum Group</Button>
                 {/* <ForumGroupsProvider> */}
-                    <UserProvider>
-                        <ForumProvider>
+                    {/* <UserProvider>
+                        <ForumProvider> */}
                             <ForumGroupList  setForumGroupId={setForumGroupId}/>
                             {component}
-                        </ForumProvider>
-                    </UserProvider>
+                        {/* </ForumProvider>
+                    </UserProvider> */}
                 {/* </ForumGroupsProvider> */}
             </div>
             {/* <ForumGroupsProvider> */}
