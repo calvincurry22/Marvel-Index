@@ -15,6 +15,8 @@ import { UserProvider } from "./users/UserProvider"
 import AccountEditForm from "./account/AccountEditForm"
 import { CharacterProvider } from "./comics/CharacterProvider"
 import { ForumProvider } from "./forum/ForumProvider"
+import { ReadComicsProvider } from "./comics/ReadComicsProvider"
+import ReadComicsList from "./comics/ReadComicsList"
 
 
 
@@ -29,7 +31,7 @@ export default ({logout}) => {
             <div className="mainContainer">
                 
                 <nav className="headerNav">
-                    <h1>Marvel Index</h1>
+                    <header>MARVEL INDEX</header>
                     
                     <button className="logoutButton" onClick={evt => {
                         logout()
@@ -45,18 +47,18 @@ export default ({logout}) => {
                             <Switch>
                                 <ForumGroupsProvider>
                                     <CharacterProvider>
-                                        <ForumProvider>
-                                            <UserProvider>
-
-                                                <Route path="/" exact component={ComicsList} />
-                                                <Route path="/comicsExplorer" component={ComicsExplorer} />
-                                                <Route path="/forum" component={Forum} />
-                                                <Route path="/account" exact component={AccountEditForm} />
-                                            </UserProvider>
-
-                                        </ForumProvider>
+                                        <ReadComicsProvider>
+                                            <ForumProvider>
+                                                <UserProvider>
+                                                    <Route path="/" exact component={ComicsList} />
+                                                    <Route path="/readComics" exact component={ReadComicsList} />
+                                                    <Route path="/comicsExplorer" component={ComicsExplorer} />
+                                                    <Route path="/forum" component={Forum} />
+                                                    <Route path="/account" exact component={AccountEditForm} />
+                                                </UserProvider>
+                                            </ForumProvider>
+                                        </ReadComicsProvider>
                                     </CharacterProvider>
-
                                 </ForumGroupsProvider>
                                 <Redirect to="/" />
                             </Switch>                          
