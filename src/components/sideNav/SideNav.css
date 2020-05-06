@@ -4,7 +4,8 @@
 }
 
 .sideNavContainer {
-    background-color: grey;
+    background-color:whitesmoke;
+    border-right: 1px solid lightgray;
     height: auto;
     width: 15%;
     

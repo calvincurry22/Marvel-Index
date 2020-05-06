@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 import { CharacterContext } from "./CharacterProvider"
-import { Button } from "reactstrap"
+import { Button, Card, CardImg, CardBody, CardTitle, CardText } from "reactstrap"
 import { ReadComicsContext } from "./ReadComicsProvider"
 
 
@@ -16,10 +16,16 @@ export default () => {
             {
                 filteredComics.map( comicObj => {
                     return (
-                        <div>
-                            <a href={comicObj.purchaseUrl} target="_blank" rel="noopener noreferrer"><img src={comicObj.image} alt="comic_image"/></a>
-                            <p>{comicObj.title}</p>
-                            <Button onClick={evt => {
+                        <div className="comic">
+                            <Card className="comicCard">
+                            <a className="comicAnchor" href={comicObj.purchaseUrl} target="_blank" rel="noopener noreferrer">
+                                <CardImg className="comicImage" src={comicObj.image} alt="comic_image"/>
+                            </a>
+                            {/* <CardTitle className="cardTitle">{comicObj.title}</CardTitle> */}
+                            <CardBody className="cardBody">
+                            <CardText className="cardTitle">{comicObj.title}</CardText>
+                            <div className="cardButtonsContainer">
+                            <Button className="comicButtons" onClick={evt => {
                                 evt.preventDefault()
                                 addReadComic({
                                     userId: comicObj.userId,
@@ -31,11 +37,15 @@ export default () => {
                                 .then(() => {
                                     deleteComic(comicObj.id)
                                 })
-                            }}>Mark As Read</Button>
-                            <Button onClick={evt => {
+                            }}>Read</Button>
+                            <Button className="comicButtons" onClick={evt => {
                                 evt.preventDefault()
                                 deleteComic(comicObj.id)
                             }}>Remove</Button>
+                            </div>
+                            </CardBody>
+                            
+                            </Card>
                         </div>
                     )
                 })

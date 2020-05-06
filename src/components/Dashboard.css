@@ -1,23 +1,32 @@
 .headerNav {
-    background-color: lightslategrey;
+    background-color: red;
+    background-image: url(./MARVELindex.png);
+    background-repeat: no-repeat;
+    background-size: 210px 50px;
+    border-bottom: 1px solid gray;
     display: flex;
     flex-direction: row;
+    height: 49px;
+    text-align: right;
 }
 
-.logoutButton {
-    height: 40%;
-    margin-left: 80%;
-    margin-top: 30px;
+.headerWelcome {
+    margin-left: 90%;
+    margin-top: 20px;
 }
 
 .routeContainer {
-    background-color: lightgray;
+    background-color: white;
+    /* background-image: url("https://i.pinimg.com/originals/68/d7/93/68d79317e01f3108e0f9a4dd237ff9b2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover; */
     width: 85%;
 }
 
 .routerDiv {
     display: flex;
     flex-direction: row;
+    height: 700px;
 }
 
 /* .container {

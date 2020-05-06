@@ -1,7 +1,10 @@
-import React, { useContext, useState } from "react"
+import React, { useContext, useState, useEffect } from "react"
 import { UserContext } from "../users/UserProvider"
+import "./AccountEditForm.css"
+import { DropdownToggle } from "reactstrap"
 
-export default () => {
+
+export default ({toggle}) => {
     const { users, editUser } = useContext(UserContext)
     console.log(users)
     const currentUserId = parseInt(localStorage.getItem("marvel_user"))
@@ -15,7 +18,9 @@ export default () => {
     }
         
     return (
+        
         <form className="accountForm">
+            <h1>Account Info</h1>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="name">Name: </label>
@@ -61,8 +66,9 @@ export default () => {
                         email: updatedUser.email,
                         password: updatedUser.password,
                         name: updatedUser.name,
-                        username: updatedUser.userName,                       
+                        userName: updatedUser.userName,                       
                     })
+                    toggle()
                 }}>
                 Save Updates
             </button>

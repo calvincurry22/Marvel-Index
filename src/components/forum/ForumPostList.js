@@ -18,9 +18,8 @@ export default ({forumGroupId}) => {
 
     return (
         <div className="forumPostContainer">
-            <h3>{foundGroup.name}</h3>
             <fieldset className="postMessageContainer">
-                <textarea placeholder="type comment here..." rows="4" cols="50" ref={text}/>
+                <textarea placeholder="type message here..." rows="4" cols="50" ref={text}/>
                 <Button className="postButton" onClick={evt => {
                     addForumPost({
                         userId: currentUserId,
@@ -30,6 +29,7 @@ export default ({forumGroupId}) => {
                     })
                 }}>Post Message</Button>
             </fieldset>
+            <h3>{foundGroup.name}</h3>
             {
                 
                 sortedGroupPosts.map(post => {

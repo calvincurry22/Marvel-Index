@@ -1,21 +1,30 @@
-import React, { useContext } from "react"
+import React, { useContext, useState } from "react"
 import { ForumGroupsContext } from "./ForumGroupsProvider"
 import "./Forum.css"
+import { DropdownItem, Dropdown, DropdownToggle, DropdownMenu } from "reactstrap"
 
 export default ({setForumGroupId}) => {
     const { forumGroups } = useContext(ForumGroupsContext)
+    const [dropdownOpen, setDropdownOpen] = useState(false);
 
-    return (
-        <div>
+    const toggle = () => setDropdownOpen(prevState => !prevState);
+
+    return (  
+        <Dropdown isOpen={dropdownOpen} toggle={toggle}>
+            <DropdownToggle caret>
+                Dropdown
+            </DropdownToggle>
+            <DropdownMenu>
             {
-                forumGroups.map(group => {
+                forumGroups.map( group => {
                     return (
-                        <h5 onClick={evt => {
-                                setForumGroupId(group.id)
-                        }}className="fakeLink href">{group.name}</h5>
+                        <DropdownItem className="fakeLink href" onClick={evt => {
+                            setForumGroupId(group.id)
+                        }}>{group.name}</DropdownItem>
                     )
                 })
             }
-        </div>
+            </DropdownMenu>
+        </Dropdown>
     )
 }
