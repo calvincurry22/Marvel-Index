@@ -1,0 +1,30 @@
+.authModalContainer {
+    background-image: url("https://vignette.wikia.nocookie.net/marveldatabase/images/e/eb/Fresh_Start_poster_001.jpg/revision/latest?cb=20180419011008");
+    background-repeat: no-repeat;
+    background-size: 1550px 900px;
+    height:650px;
+    width: 1550px;
+    /* https://i0.wp.com/media.boingboing.net/wp-content/uploads/2015/04/Team-Marvel-930x499.jpg?resize=930%2C499 */
+}
+
+.authContainer {
+    background-image: url(../MARVELindex.png);
+    background-repeat: no-repeat;
+    background-size: 600px 80px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    height: 80px;
+    margin-top: 1px;
+}
+
+.signInButton {
+    margin-left: 85%;
+}
+
+.login {
+    height:40px;
+    margin-top: 20px;
+    width: 90px;
+}
+
