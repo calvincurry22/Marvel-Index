@@ -2,15 +2,16 @@ import React from "react"
 import { Link } from "react-router-dom"
 import "./SideNav.css"
 import { List, ListItem, ListItemIcon, ListItemText, Icon, SvgIcon } from "@material-ui/core"
+import { DropdownToggle } from "reactstrap"
 
 
-export default ({logout}) => (
+export default ({logout, toggle}) => (
     <div className="sideNavContainer">
         <nav className="sideNav">
             <List>
                 <ListItem>
                     <ListItemText>
-                        <Link to="/">My List</Link>
+                        <Link to="/dashboard">My List</Link>
                     </ListItemText>
                 </ListItem>
                 <ListItem>
@@ -30,12 +31,14 @@ export default ({logout}) => (
                 </ListItem>
                 <ListItem>
                     <ListItemText>
-                        <Link to="/account">Account</Link>
+                        <Link to="/account" onClick={evt => {
+                            toggle()
+                        }}>Account</Link>
                     </ListItemText>
                 </ListItem>
                 <ListItem>
                     <ListItemText>
-                        <Link onClick={evt => {
+                        <Link to="/" onClick={evt => {
                             logout()
                         }}>Logout</Link>
                     </ListItemText>

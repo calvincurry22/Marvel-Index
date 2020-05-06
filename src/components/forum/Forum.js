@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect, useContext } from "react"
-import ForumPage from "./ForumPage"
 import { ForumProvider } from "./ForumProvider"
 import { UserProvider } from "../users/UserProvider"
 import "./Forum.css"
@@ -15,7 +14,7 @@ export default () => {
    const toggle = () => setModal(!modal)
    const name = useRef()
    const { addForumGroup } = useContext(ForumGroupsContext)
-   const [forumGroupId, setForumGroupId] = useState(null)
+   const [forumGroupId, setForumGroupId] = useState(1)
    const [component, setComponent] = useState()
 
    const showForumPostsList = () => {
@@ -33,29 +32,23 @@ export default () => {
         <>
             <div className="forumPageContainer">
                 <h1 className="forumPageHeader">Forum</h1>
-                <Button onClick={evt => {
-                    toggle()
-                }}>Create Forum Group</Button>
-                {/* <ForumGroupsProvider> */}
-                    {/* <UserProvider>
-                        <ForumProvider> */}
-                            <ForumGroupList  setForumGroupId={setForumGroupId}/>
-                            {component}
-                        {/* </ForumProvider>
-                    </UserProvider> */}
-                {/* </ForumGroupsProvider> */}
-            </div>
-            {/* <ForumGroupsProvider> */}
+                <div className="forumGroupDiv">
+                    <Button className="createForumGroupButton"onClick={evt => {
+                        toggle()
+                    }}>Create Forum Group</Button>
+                    
+                    <ForumGroupList  setForumGroupId={setForumGroupId}/>
+                </div>  
+                {component}
                 <Modal isOpen={modal} toggle={toggle}>
                     <ModalHeader toggle={toggle}>
                         <p>Create New Group</p>
                     </ModalHeader>
                     <ModalBody>
-                        <input type="forumName" ref={name} placeholder="type name"/>
+                        <input type="forumName" ref={name} autoFocus placeholder="type name"/>
                     </ModalBody>
                     <ModalFooter>
                         <Button color="danger" onClick={evt => {
-                            // removeComic(selectedComic.comic.id)
                             addForumGroup({
                                 name: name.current.value
                             })
@@ -63,7 +56,7 @@ export default () => {
                         }}>Create Group</Button>
                     </ModalFooter>
                 </Modal>
-            {/* </ForumGroupsProvider> */}
+            </div>
         </>
     )
 }
