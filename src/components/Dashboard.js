@@ -18,7 +18,7 @@ import { ForumProvider } from "./forum/ForumProvider"
 import { ReadComicsProvider } from "./comics/ReadComicsProvider"
 import ReadComicsList from "./comics/ReadComicsList"
 import Auth from "./auth/Auth"
-import { Modal, ModalBody } from "reactstrap"
+import { Modal, ModalBody, ModalHeader } from "reactstrap"
 
 
 
@@ -53,6 +53,9 @@ export default ({logout}) => {
                                                     <Route path="/comicsExplorer" exact component={ComicsExplorer} />
                                                     <Route path="/forum" exact component={Forum} />
                                                     <Modal isOpen={accountModal} toggle={toggleAccount}>
+                                                        <ModalHeader toggle={toggleAccount}>
+                                                            <h2>Account Info</h2>
+                                                        </ModalHeader>
                                                         <ModalBody>
                                                             <Route path="/account" exact
                                                                 render={ () => <AccountEditForm  toggle={toggleAccount}/>}

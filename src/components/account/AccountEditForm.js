@@ -20,7 +20,6 @@ export default ({toggle}) => {
     return (
         
         <form className="accountForm">
-            <h1>Account Info</h1>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="name">Name: </label>

@@ -16,7 +16,7 @@ export default ({logout, toggle}) => (
                 </ListItem>
                 <ListItem>
                     <ListItemText>
-                        <Link to="/readComics">Read Comics</Link>
+                        <Link to="/readComics">View Read Comics</Link>
                     </ListItemText>
                 </ListItem>
                 <ListItem>
