@@ -13,14 +13,14 @@ export default () => {
    
     return (
 
-        <div>
-            <h1>My List</h1>
+        <div className="myListContainer">
+            <h1 className="myListHeader">My List</h1>
             {/* <button onClick={evt => {
 
             }}></button> */}
-            <div>
+            {/* <div> */}
                 <UserReadingList />
-            </div>
+            {/* </div> */}
             {/* <Modal isOpen={modal} toggle={toggle}>
                 <ModalHeader toggle={toggle}>
                     <p>Read Comics</p>

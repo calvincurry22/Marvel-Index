@@ -37,7 +37,6 @@ const Login = props => {
     return (
         <div className="container--login">
             <form className="form--login" onSubmit={handleLogin}>
-                <h2>Sign in</h2>
                 <fieldset>
                     <label htmlFor="inputEmail"> Email address </label>
                     <input ref={email} type="email"

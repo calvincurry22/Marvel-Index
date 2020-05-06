@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useContext } from "react"
 
 import SideNav from "./sideNav/SideNav"
 import ComicsExplorer from "./comics/ComicsExplorer"
@@ -11,7 +11,7 @@ import "./sideNav/SideNav.css"
 import ComicsList from "./comics/ComicsList"
 import { ButtonAppBar } from "./nav/ButtonAppBar"
 import { ForumGroupsProvider } from "./forum/ForumGroupsProvider"
-import { UserProvider } from "./users/UserProvider"
+import { UserProvider, UserContext } from "./users/UserProvider"
 import AccountEditForm from "./account/AccountEditForm"
 import { CharacterProvider } from "./comics/CharacterProvider"
 import { ForumProvider } from "./forum/ForumProvider"
@@ -25,24 +25,17 @@ import ReadComicsList from "./comics/ReadComicsList"
 
 export default ({logout}) => {
     
-    
     return (
         <>
             <div className="mainContainer">
                 
                 <nav className="headerNav">
-                    <header>MARVEL INDEX</header>
-                    
-                    <button className="logoutButton" onClick={evt => {
-                        logout()
-                    }}>
-                        Logout
-                    </button>
+                   <h6 className="headerWelcome">Welcome</h6>
                 </nav>
                 
                 <Router>
                     <div className="routerDiv">
-                        <SideNav />
+                        <SideNav  logout={logout} />
                         <div className="routeContainer">
                             <Switch>
                                 <ForumGroupsProvider>

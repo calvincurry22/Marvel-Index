@@ -4,7 +4,7 @@ import "./SideNav.css"
 import { List, ListItem, ListItemIcon, ListItemText, Icon, SvgIcon } from "@material-ui/core"
 
 
-export default () => (
+export default ({logout}) => (
     <div className="sideNavContainer">
         <nav className="sideNav">
             <List>
@@ -31,6 +31,13 @@ export default () => (
                 <ListItem>
                     <ListItemText>
                         <Link to="/account">Account</Link>
+                    </ListItemText>
+                </ListItem>
+                <ListItem>
+                    <ListItemText>
+                        <Link onClick={evt => {
+                            logout()
+                        }}>Logout</Link>
                     </ListItemText>
                 </ListItem>
             </List>

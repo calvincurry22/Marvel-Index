@@ -1,6 +1,5 @@
 import React, { useRef } from "react"
 
-
 const Register = props => {
     const name = useRef()
     const userName = useRef()
@@ -54,12 +53,12 @@ const Register = props => {
         <div className="container--login">
             <form className="form--register" onSubmit={handleRegister}>
                 <h4 className="darkgray">If you do not have an account yet, please register below</h4>
-                <fieldset>
+                <fieldset className="register--fieldset">
                     <label htmlFor="name"> Name </label>
                     <input ref={name} type="text"
                         name="name"
                         className="form-control"
-                        placeholder="Name"
+                        // placeholder="Name"
                         required  />
                 </fieldset>
                 <fieldset>
@@ -67,7 +66,7 @@ const Register = props => {
                     <input ref={userName} type="text"
                         name="userName"
                         className="form-control"
-                        placeholder="User name"
+                        // placeholder="User name"
                         required />
                 </fieldset>
                 <fieldset>
@@ -75,7 +74,7 @@ const Register = props => {
                     <input ref={email} type="email"
                         name="email"
                         className="form-control"
-                        placeholder="Email address"
+                        // placeholder="Email address"
                         required />
                 </fieldset>
                 <fieldset>
@@ -83,7 +82,7 @@ const Register = props => {
                     <input ref={password} type="password"
                         name="password"
                         className="form-control"
-                        placeholder="Password"
+                        // placeholder="Password"
                         required />
                 </fieldset>
                 <fieldset>
@@ -91,7 +90,7 @@ const Register = props => {
                     <input ref={verifyPassword} type="password"
                         name="verifyPassword"
                         className="form-control"
-                        placeholder="Verify password"
+                        // placeholder="Verify password"
                         required />
                 </fieldset>
                 <fieldset>

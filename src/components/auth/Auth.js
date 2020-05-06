@@ -2,8 +2,7 @@ import React, { useState } from "react"
 import Login from "./Login"
 import Register from "./Register"
 import "./Auth.css"
-import { Button } from "@material-ui/core"
-import { ModalHeader, Modal, ModalBody } from "reactstrap"
+import { ModalHeader, Modal, ModalBody, Button } from "reactstrap"
 
 
 export default ({toggle}) => {
@@ -14,12 +13,12 @@ export default ({toggle}) => {
     return (
         <>
             <div className="authContainer">
-                <button className="signInButton login" onClick={evt => {
+                <Button className="signInButton login"  color="danger" onClick={evt => {
                     toggleSignIn()
-                }}>Sign In</button>
-                <button className="signUpButton login" onClick={evt => {
+                }}>Sign In</Button>
+                <Button className="signUpButton login"  color="danger" onClick={evt => {
                     registerToggle()
-                }}>Sign Up</button>
+                }}>Sign Up</Button>
             </div>
                 
                 
@@ -33,7 +32,7 @@ export default ({toggle}) => {
                 </ModalBody>
             </Modal>
             
-            <Modal isopen={registerModal} toggle={registerToggle}>
+            <Modal isOpen={registerModal} toggle={registerToggle}>
                 <ModalHeader toggle={registerToggle}>
                     <h4>Sign Up</h4>
                 </ModalHeader>
