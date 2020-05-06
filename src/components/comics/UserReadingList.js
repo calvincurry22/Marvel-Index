@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 import { CharacterContext } from "./CharacterProvider"
-import { Button, Card, CardImg, CardBody, CardTitle } from "reactstrap"
+import { Button, Card, CardImg, CardBody, CardTitle, CardText } from "reactstrap"
 import { ReadComicsContext } from "./ReadComicsProvider"
 
 
@@ -18,11 +18,13 @@ export default () => {
                     return (
                         <div className="comic">
                             <Card className="comicCard">
-                            <a href={comicObj.purchaseUrl} target="_blank" rel="noopener noreferrer">
+                            <a className="comicAnchor" href={comicObj.purchaseUrl} target="_blank" rel="noopener noreferrer">
                                 <CardImg className="comicImage" src={comicObj.image} alt="comic_image"/>
                             </a>
-                            <CardTitle className="cardTitle">{comicObj.title}</CardTitle>
+                            {/* <CardTitle className="cardTitle">{comicObj.title}</CardTitle> */}
                             <CardBody className="cardBody">
+                            <CardText className="cardTitle">{comicObj.title}</CardText>
+                            <div className="cardButtonsContainer">
                             <Button className="comicButtons" onClick={evt => {
                                 evt.preventDefault()
                                 addReadComic({
@@ -40,7 +42,9 @@ export default () => {
                                 evt.preventDefault()
                                 deleteComic(comicObj.id)
                             }}>Remove</Button>
+                            </div>
                             </CardBody>
+                            
                             </Card>
                         </div>
                     )

@@ -17,6 +17,10 @@
     text-align: center;
 }
 
+.comicAnchor {
+    height: 200px;
+    width: 198px;
+}
 .comicImage {
     height: 200px;
     width: 198px !important;
@@ -24,6 +28,7 @@
 
 .comic {
     margin-left: 20px;
+    margin-top: 20px;
 }
 
 .comicCard {
@@ -43,10 +48,35 @@
 
 .comic {
     display: inline-block;
+    height: auto;
     
 }
 
 .cardBody {
     display: flex;
+    flex-direction: column;
+}
+
+.cardButtonsContainer {
+    display: flex;
     flex-direction: row;
+}
+.readComicsHeader {
+    text-align: center;
+}
+
+.readingListContainer {
+    display: flex;
+    /* justify-content: space-evenly; */
+    flex-wrap: wrap;
+    height: 650px;
+    overflow-y: auto;
+}
+
+.readComicsContainer {
+    display: flex;
+    /* justify-content: space-evenly; */
+    flex-wrap: wrap;
+    height: 650px;
+    overflow-y: auto;
 }
