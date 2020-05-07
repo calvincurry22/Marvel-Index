@@ -37,7 +37,7 @@ export default ({ characterObj }) => {
                                 {
                                     comicsArray.map(comic => {
                                         if(!comic.images[0]) {
-                                            return
+                                            return;
                                         } else {
                                         const comicImage = comic.images[0].path + "/portrait_xlarge." + comic.images[0].extension
                                         return (
