@@ -14,7 +14,7 @@ export default ({ characterObj }) => {
 
     const imageSource = `${characterObj.thumbnail.path}/portrait_incredible.${characterObj.thumbnail.extension}`
     const comicsArray = characterObj.comicInfo  
-    const comicsImage = characterObj.comicInfo[0].images[0].path
+    
     
     
     return (
@@ -25,8 +25,7 @@ export default ({ characterObj }) => {
                     <h2 className="characterName">{characterObj.name}</h2>
                     <div className="imageDescriptionContainer">
                         <img className="characterImage" src={imageSource} alt="characterImage" />
-                        <p className="characterDescriptionHeader">Description:</p>
-                        <p className="characterDescription">{characterObj.description}</p>
+                        <p className="characterDescription"><strong>DESCRIPTION:</strong> {characterObj.description}</p>
                     </div>
                 </div>
                 
@@ -37,17 +36,22 @@ export default ({ characterObj }) => {
                             <div className="comics">
                                 {
                                     comicsArray.map(comic => {
+                                        if(!comic.images[0]) {
+                                            return
+                                        } else {
+                                        const comicImage = comic.images[0].path + "/portrait_xlarge." + comic.images[0].extension
                                         return (
-                                            <div>
+                                            <div className="comic">
                                                 <a className="fakeLink href:hover" onClick={evt => {
                                                     console.log(comic)
                                                     evt.preventDefault()
                                                     setSelectedComic({comic})
                                                     toggle()
                                                     
-                                                }}><img src={comicsImage}></img></a>
+                                                }}><img src={comicImage}></img></a>
                                             </div>
                                         )
+                                        }
                                     })
                                 }
                             </div>
@@ -65,8 +69,8 @@ export default ({ characterObj }) => {
                                         addComic({
                                             userId: currentUserId,
                                             title: selectedComic.comic.title,
-                                            image: selectedComic.comic.images[0].path,
-                                            purchaseUrl: selectedComic.comic.urls[1].url,
+                                            image: `${selectedComic.comic.images[0].path}.${selectedComic.comic.images[0].extension}`,
+                                            purchaseUrl: selectedComic.comic.urls[0].url,
                                             comidId: selectedComic.comic.id
                                         })
                                         toggle()

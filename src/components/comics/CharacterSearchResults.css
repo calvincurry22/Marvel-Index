@@ -49,6 +49,7 @@ a {
 .imageDescriptionContainer {
     display: flex;
     flex-direction: row;
+    margin-left: 10px;
 }
 
 .characters {
@@ -56,7 +57,25 @@ a {
     height: 550px;
     overflow-y: auto;
     width: 255.29px;
+}
 
+.characterName {
+    text-align: center;
+}
+
+.characterDescriptionHeader {
+    margin-left: 20px;
+    padding-top: 20px;
+}
+
+.characterDescription {
+    padding: 60px;
+}
+.characterImage {
+    border: 3px solid black;
+    border-radius: 0px;
+    box-shadow: 0px 10px 18px 0px rgba(50, 50, 50, 1);
+    margin-left:1%;
 }
 
 .listGroup {
@@ -72,3 +91,16 @@ a {
     height: 42px;
 }
 
+.comicsHeader {
+    text-align: center;
+}
+.comics {
+    display: flex;
+    flex-direction: row;
+    overflow-y: auto;
+}
+
+.comic {
+    border: 2px solid darkslategray;
+    margin-left: 10px;
+}
