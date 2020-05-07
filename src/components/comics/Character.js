@@ -25,8 +25,7 @@ export default ({ characterObj }) => {
                     <h2 className="characterName">{characterObj.name}</h2>
                     <div className="imageDescriptionContainer">
                         <img className="characterImage" src={imageSource} alt="characterImage" />
-                        <p className="characterDescriptionHeader">Description:</p>
-                        <p className="characterDescription">{characterObj.description}</p>
+                        <p className="characterDescription"><strong>DESCRIPTION:</strong> {characterObj.description}</p>
                     </div>
                 </div>
                 
