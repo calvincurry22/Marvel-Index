@@ -37,17 +37,22 @@ export default ({ characterObj }) => {
                             <div className="comics">
                                 {
                                     comicsArray.map(comic => {
+                                        if(!comic.images[0]) {
+                                            return
+                                        } else {
+                                        const comicImage = comic.images[0].path + "/portrait_xlarge." + comic.images[0].extension
                                         return (
-                                            <div>
+                                            <div className="comic">
                                                 <a className="fakeLink href:hover" onClick={evt => {
                                                     console.log(comic)
                                                     evt.preventDefault()
                                                     setSelectedComic({comic})
                                                     toggle()
                                                     
-                                                }}><img src={comicsImage}></img></a>
+                                                }}><img src={comicImage}></img></a>
                                             </div>
                                         )
+                                        }
                                     })
                                 }
                             </div>
@@ -65,8 +70,8 @@ export default ({ characterObj }) => {
                                         addComic({
                                             userId: currentUserId,
                                             title: selectedComic.comic.title,
-                                            image: selectedComic.comic.images[0].path,
-                                            purchaseUrl: selectedComic.comic.urls[1].url,
+                                            image: `${selectedComic.comic.images[0].path}.${selectedComic.comic.images[0].extension}`,
+                                            purchaseUrl: selectedComic.comic.urls[0].url,
                                             comidId: selectedComic.comic.id
                                         })
                                         toggle()

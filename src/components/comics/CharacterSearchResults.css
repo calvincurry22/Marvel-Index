@@ -72,3 +72,13 @@ a {
     height: 42px;
 }
 
+.comics {
+    display: flex;
+    flex-direction: row;
+    overflow-y: auto;
+}
+
+.comic {
+    border: 2px solid darkslategray;
+    margin-left: 10px;
+}
