@@ -14,7 +14,7 @@ export default ({ characterObj }) => {
 
     const imageSource = `${characterObj.thumbnail.path}/portrait_incredible.${characterObj.thumbnail.extension}`
     const comicsArray = characterObj.comicInfo  
-    const comicsImage = characterObj.comicInfo[0].images[0].path
+    
     
     
     return (
