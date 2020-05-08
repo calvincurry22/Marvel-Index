@@ -31,7 +31,7 @@ export default ({logout, toggle}) => (
                 </ListItem>
                 <ListItem>
                     <ListItemText>
-                        <Link to="/account" onClick={evt => {
+                        <Link  onClick={evt => {
                             toggle()
                         }}>Account</Link>
                     </ListItemText>
