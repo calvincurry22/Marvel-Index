@@ -7,6 +7,12 @@
     word-wrap: break-word;
 }
 
+.forumPosts {
+    height: 390px;
+    overflow-y: auto;
+    text-align: center;
+}
+
 .postContainer {
     text-align: center;
     overflow-y: auto;

@@ -22,9 +22,6 @@ import { Modal, ModalBody, ModalHeader } from "reactstrap"
 
 
 
-
-
-
 export default ({logout}) => {
     const [accountModal, setAccountModal] = useState(false)
     const toggleAccount = () => setAccountModal(!accountModal)
