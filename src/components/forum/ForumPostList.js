@@ -29,7 +29,7 @@ export default ({forumGroupId}) => {
                     })
                 }}>Post Message</Button>
             </fieldset>
-            <h3>{foundGroup.name}</h3>
+            <h3 className="forumTopicHeader">{foundGroup.name}</h3>
             <div className="forumPosts">
                 {                   
                     sortedGroupPosts.map(post => {

@@ -7,6 +7,9 @@
     word-wrap: break-word;
 }
 
+.forumTopicHeader {
+    text-align: center;
+}
 .forumPosts {
     height: 390px;
     overflow-y: auto;
@@ -18,8 +21,11 @@
     overflow-y: auto;
     height: 500px;
 }
-
+.postContent {
+    padding: 5px !important;
+}
 .postDate {
+    font-size: 12px;
     margin-bottom: 0;
     text-align: right;
 }
@@ -30,6 +36,7 @@
 }
 
 .postMessage {
+    font-size: 13px;
     margin-bottom: 0;
     padding: 0px 20px;
 }

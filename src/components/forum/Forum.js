@@ -35,14 +35,14 @@ export default () => {
                 <div className="forumGroupDiv">
                     <Button className="createForumGroupButton"onClick={evt => {
                         toggle()
-                    }}>Create Forum Group</Button>
+                    }}>Create Topic</Button>
                     
                     <ForumGroupList  setForumGroupId={setForumGroupId}/>
                 </div>  
                 {component}
                 <Modal isOpen={modal} toggle={toggle}>
                     <ModalHeader toggle={toggle}>
-                        <p>Create New Group</p>
+                        <p>Create New Topic</p>
                     </ModalHeader>
                     <ModalBody>
                         <input type="forumName" ref={name} autoFocus placeholder="type name"/>
@@ -53,7 +53,7 @@ export default () => {
                                 name: name.current.value
                             })
                             toggle()
-                        }}>Create Group</Button>
+                        }}>Create Topic</Button>
                     </ModalFooter>
                 </Modal>
             </div>
