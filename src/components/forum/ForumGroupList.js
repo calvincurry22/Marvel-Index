@@ -12,7 +12,7 @@ export default ({setForumGroupId}) => {
     return (  
         <Dropdown isOpen={dropdownOpen} toggle={toggle}>
             <DropdownToggle caret>
-                Dropdown
+                Choose A Group
             </DropdownToggle>
             <DropdownMenu>
             {
