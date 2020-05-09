@@ -27,14 +27,22 @@
 }
 
 .readComic {
+    font-size: 13px;
+    height: 300px;
     margin-left: 20px;
     margin-top: 20px;
+    width:200px;
+}
+
+.readComicCard {
+    height: 300px;
 }
 
 .comicCard {
     font-size: 13px;
+    height: 320px;
     margin-left: 10px;
-    height: 350px;
+    margin-top: 10px;
     width:200px;
 }
 
@@ -75,6 +83,7 @@
     height: 650px;
     margin-left: 20px;
     overflow-y: auto;
+    padding-left: 80px;
 }
 
 .readComicsContainer {

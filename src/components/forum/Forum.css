@@ -7,6 +7,9 @@
     word-wrap: break-word;
 }
 
+.forumTopicHeader {
+    text-align: center;
+}
 .forumPosts {
     height: 390px;
     overflow-y: auto;
@@ -18,8 +21,11 @@
     overflow-y: auto;
     height: 500px;
 }
-
+.postContent {
+    padding: 5px !important;
+}
 .postDate {
+    font-size: 12px;
     margin-bottom: 0;
     text-align: right;
 }
@@ -30,13 +36,17 @@
 }
 
 .postMessage {
+    font-size: 13px;
     margin-bottom: 0;
     padding: 0px 20px;
 }
 .postHeader {
+    display: inline-block;
     font-size: 12px;
     font-weight: bold;
     margin-bottom: 0;
+    margin-left: 10px;
+    margin-top: 10px;
     text-align: left;
 }
 
@@ -117,4 +127,13 @@ h5 {
 .forumPostContainer {
     margin-left: 10px;
     margin-top: 10px;
+}
+
+.userAvatar {
+    display: inline-block;
+}
+
+.avatarHeader {
+    display: flex;
+    flex-direction: row;
 }

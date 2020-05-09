@@ -1,7 +1,7 @@
 import React, { useContext, useRef } from "react"
 import { UserContext } from "../users/UserProvider"
 import { ForumGroupsContext } from "./ForumGroupsProvider"
-import { Card, CardContent } from "@material-ui/core"
+import { Card, CardContent, Avatar } from "@material-ui/core"
 import { ForumContext } from "./ForumProvider"
 import { Button } from "reactstrap"
 
@@ -29,7 +29,7 @@ export default ({forumGroupId}) => {
                     })
                 }}>Post Message</Button>
             </fieldset>
-            <h3>{foundGroup.name}</h3>
+            <h3 className="forumTopicHeader">{foundGroup.name}</h3>
             <div className="forumPosts">
                 {                   
                     sortedGroupPosts.map(post => {
@@ -39,7 +39,10 @@ export default ({forumGroupId}) => {
                         return (
                             <Card className="forumPost">
                                 <CardContent className="postContent">
-                                    <p className="postHeader">{foundUser.userName}</p>
+                                    <div className="avatarHeader">
+                                        <Avatar className="userAvatar" src={foundUser.userImage} />
+                                        <p className="postHeader">{foundUser.userName}</p>
+                                    </div>
                                     <p className="postDate">{convertedDate}</p>
                                     <div className="postDateMessage">
                                         <p className="postMessage">{post.message}</p>

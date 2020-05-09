@@ -54,9 +54,7 @@ export default ({logout}) => {
                                                             <h2>Account Info</h2>
                                                         </ModalHeader>
                                                         <ModalBody>
-                                                            <Route path="/account" exact
-                                                                render={ () => <AccountEditForm  toggle={toggleAccount}/>}
-                                                            />
+                                                            <AccountEditForm  toggle={toggleAccount}/>
                                                         </ModalBody>
                                                     </Modal>
                                                 </UserProvider>

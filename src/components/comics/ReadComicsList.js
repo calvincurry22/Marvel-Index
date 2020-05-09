@@ -17,7 +17,7 @@ export default () => {
                         return (
 
                             <div className="readComic">
-                                <Card className="comicCard">
+                                <Card className="readComicCard">
                                     <CardImg className="comicImage" src={comicObj.image} alt="comic_image" />
                                     <CardTitle>
                                         {comicObj.title} 
