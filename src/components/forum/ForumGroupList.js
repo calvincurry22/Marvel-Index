@@ -14,7 +14,7 @@ export default ({setForumGroupId}) => {
             <DropdownToggle caret>
                 Choose A Topic
             </DropdownToggle>
-            <DropdownMenu>
+            <DropdownMenu className="forumDropdownMenu">
             {
                 forumGroups.map( group => {
                     return (
