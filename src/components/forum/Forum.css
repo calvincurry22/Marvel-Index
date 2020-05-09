@@ -11,6 +11,7 @@
     text-align: center;
 }
 .forumPosts {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     height: 390px;
     overflow-y: auto;
     text-align: center;
@@ -25,7 +26,7 @@
     padding: 5px !important;
 }
 .postDate {
-    font-size: 12px;
+    font-size: 11px;
     margin-bottom: 0;
     text-align: right;
 }
@@ -36,13 +37,13 @@
 }
 
 .postMessage {
-    font-size: 13px;
+    font-size: 12px;
     margin-bottom: 0;
     padding: 0px 20px;
 }
 .postHeader {
     display: inline-block;
-    font-size: 12px;
+    font-size: 10px;
     font-weight: bold;
     margin-bottom: 0;
     margin-left: 10px;
@@ -136,4 +137,8 @@ h5 {
 .avatarHeader {
     display: flex;
     flex-direction: row;
+}
+
+.textarea {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

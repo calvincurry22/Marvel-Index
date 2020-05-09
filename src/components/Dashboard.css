@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
 .headerNav {
     background-color: red;
     background-image: url(./MARVELindex.png);
@@ -17,9 +19,10 @@
 
 .routeContainer {
     background-color: white;
-    /* background-image: url("https://i.pinimg.com/originals/68/d7/93/68d79317e01f3108e0f9a4dd237ff9b2.jpg");
+    background-image: url(./newBackground.png);
     background-repeat: no-repeat;
-    background-size: cover; */
+    background-size: 1291px 700px;
+    font-family: 'Permanent Marker', cursive;
     width: 85%;
 }
 

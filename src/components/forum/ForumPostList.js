@@ -19,7 +19,7 @@ export default ({forumGroupId}) => {
     return (
         <div className="forumPostContainer">
             <fieldset className="postMessageContainer">
-                <textarea placeholder="type message here..." rows="4" cols="50" ref={text}/>
+                <textarea className="textarea" placeholder="Type message here..." rows="4" cols="50" ref={text}/>
                 <Button className="postButton" onClick={evt => {
                     addForumPost({
                         userId: currentUserId,
