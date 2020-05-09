@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from "react"
 import { UserContext } from "../users/UserProvider"
 import "./AccountEditForm.css"
 import { DropdownToggle, Alert, UncontrolledAlert } from "reactstrap"
+import ImageUpload from "../images/ImageUpload"
 
 
 export default ({toggle}) => {
@@ -12,9 +13,9 @@ export default ({toggle}) => {
     const [ updatedUser, setUser ] = useState(currentUser)
     const [visible, setVisible] = useState(false)
     const onDismiss = () => setVisible(!visible)
+    const [imageUrl, setImageUrl] = useState('')
     
     
-
     const handleControlledInputChange = (event) => {
         const newUser = Object.assign({}, updatedUser)
         newUser[event.target.name] = event.target.value
@@ -61,16 +62,32 @@ export default ({toggle}) => {
                     />
                 </div>
             </fieldset>
+            <fieldset>
+                <ImageUpload setImageUrl={setImageUrl}/>
+            </fieldset>
             <button type="submit" className="btn btn-primary"
                 onClick={evt => {
                     evt.preventDefault()
-                    editUser({
-                        id: currentUserId,
-                        email: updatedUser.email,
-                        password: updatedUser.password,
-                        name: updatedUser.name,
-                        userName: updatedUser.userName,                       
-                    })
+                    if ( imageUrl !== '') {
+
+                        editUser({
+                            id: currentUserId,
+                            email: updatedUser.email,
+                            password: updatedUser.password,
+                            name: updatedUser.name,
+                            userName: updatedUser.userName,
+                            userImage: imageUrl                       
+                        })
+                    } else {
+                        editUser({
+                            id: currentUserId,
+                            email: updatedUser.email,
+                            password: updatedUser.password,
+                            name: updatedUser.name,
+                            userName: updatedUser.userName,
+                            userImage: currentUser.userImage                      
+                        })
+                    }
                     toggle()
                     alert("Changes successfully updated")
                 }}>
