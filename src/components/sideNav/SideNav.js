@@ -11,34 +11,34 @@ export default ({logout, toggle}) => (
             <List>
                 <ListItem>
                     <ListItemText>
-                        <Link to="/dashboard">My List</Link>
+                        <Link className ="sideNavLinks" to="/dashboard">My List</Link>
                     </ListItemText>
                 </ListItem>
                 <ListItem>
                     <ListItemText>
-                        <Link to="/readComics">View Read Comics</Link>
+                        <Link className ="sideNavLinks" to="/readComics">View Read Comics</Link>
                     </ListItemText>
                 </ListItem>
                 <ListItem>
                     <ListItemText>
-                        <Link to="/comicsExplorer">Explore Comics</Link>
+                        <Link className ="sideNavLinks" to="/comicsExplorer">Explore Comics</Link>
                     </ListItemText>
                 </ListItem>
                 <ListItem>
                     <ListItemText>
-                        <Link to="/forum">Forum</Link>
+                        <Link className ="sideNavLinks" to="/forum">Forum</Link>
                     </ListItemText>
                 </ListItem>
                 <ListItem>
                     <ListItemText>
-                        <Link  onClick={evt => {
+                        <Link className ="sideNavLinks" onClick={evt => {
                             toggle()
                         }}>Account</Link>
                     </ListItemText>
                 </ListItem>
                 <ListItem>
                     <ListItemText>
-                        <Link to="/" onClick={evt => {
+                        <Link className ="sideNavLinks" to="/" onClick={evt => {
                             logout()
                         }}>Logout</Link>
                     </ListItemText>
