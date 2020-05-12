@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react"
+import React, { useContext, useState, useRef } from "react"
 import { UserContext } from "../users/UserProvider"
 import ImageUpload from "../images/ImageUpload"
 import "./AccountEditForm.css"
@@ -6,21 +6,72 @@ import "./AccountEditForm.css"
 
 export default ({toggle}) => {
     const { users, editUser } = useContext(UserContext)
-    console.log(users)
     const currentUserId = parseInt(localStorage.getItem("marvel_user"))
     const currentUser = users.find(user => user.id === currentUserId)
     const [ updatedUser, setUser ] = useState(currentUser)
     const [visible, setVisible] = useState(false)
     const onDismiss = () => setVisible(!visible)
     const [imageUrl, setImageUrl] = useState('')
-    
-    
+    const userName = useRef()
+    const email = useRef()
+
     const handleControlledInputChange = (event) => {
         const newUser = Object.assign({}, updatedUser)
         newUser[event.target.name] = event.target.value
         setUser(newUser)
     }
+
+    const existingEmailCheck = () => {
+        return fetch(`http://localhost:8090/users?email=${email.current.value}`)
+            .then(_ => _.json())
+            .then(user => {
+                console.log(user.length)
+                if ((user.length) && user[0].id !== currentUserId) {
+                    alert("Email already exists")   
+                } else {
+                    updateUserInfo()
+                    alert("Changes successfully updated")
+                    toggle()
+                }
+            })
+    }
+
+    const updateUserInfo = () => {
+        if ( imageUrl !== '') {
+
+            editUser({
+                id: currentUserId,
+                email: updatedUser.email,
+                password: updatedUser.password,
+                name: updatedUser.name,
+                userName: updatedUser.userName,
+                userImage: imageUrl                       
+            })
+        } else {
+            editUser({
+                id: currentUserId,
+                email: updatedUser.email,
+                password: updatedUser.password,
+                name: updatedUser.name,
+                userName: updatedUser.userName,
+                userImage: currentUser.userImage                      
+            })
+        }
+    }
         
+    const validateUserInfo = () => {
+        return fetch(`http://localhost:8090/users?userName=${userName.current.value}`)
+            .then(_ => _.json())
+            .then(user => {
+                if ((user.length) && user[0].id !== currentUserId) {
+                    return alert("UserName already exists")
+                } else {
+                 existingEmailCheck()
+                }
+            })
+    }
+    
+
     return (
         
         <form className="accountForm">
@@ -39,6 +90,7 @@ export default ({toggle}) => {
                     <label htmlFor="userName">Username: </label>
                     <input type="text" name="userName" required className="form-control"
                         placeholder="Username"
+                        ref={userName}
                         defaultValue={currentUser.userName}
                         onChange={handleControlledInputChange}
                     />
@@ -48,6 +100,7 @@ export default ({toggle}) => {
                 <div className="form-group">
                     <label htmlFor="email">Email: </label>
                     <input  type="email" name="email" className="form-control"
+                        ref={email}
                         defaultValue={currentUser.email}
                         onChange={handleControlledInputChange}
                     />
@@ -67,28 +120,7 @@ export default ({toggle}) => {
             <button type="submit" className="btn btn-primary"
                 onClick={evt => {
                     evt.preventDefault()
-                    if ( imageUrl !== '') {
-
-                        editUser({
-                            id: currentUserId,
-                            email: updatedUser.email,
-                            password: updatedUser.password,
-                            name: updatedUser.name,
-                            userName: updatedUser.userName,
-                            userImage: imageUrl                       
-                        })
-                    } else {
-                        editUser({
-                            id: currentUserId,
-                            email: updatedUser.email,
-                            password: updatedUser.password,
-                            name: updatedUser.name,
-                            userName: updatedUser.userName,
-                            userImage: currentUser.userImage                      
-                        })
-                    }
-                    toggle()
-                    alert("Changes successfully updated")
+                    validateUserInfo()  
                 }}>
                 Save Updates
             </button>
