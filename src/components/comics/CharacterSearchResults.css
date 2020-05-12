@@ -55,7 +55,7 @@ a {
 
 .characters {
     border-radius: 5px;
-    height: 550px;
+    height: 635px;
     overflow-y: auto;
     width: 255.29px;
 }
@@ -104,7 +104,7 @@ a {
 }
 
 .comic {
-    border: 3px solid black;
+    border: 2.5px solid black;
     margin-left: 10px;
 }
 

@@ -13,6 +13,11 @@
     width: 15%;
 }
 
-/* .sideNavLinks {
-    color: black !important;
-} */
+.sideNavIcon {
+    color: dodgerblue;
+    margin-right: 10px;
+}
+
+.sideNavLinks {
+    font-size: 13px;
+}

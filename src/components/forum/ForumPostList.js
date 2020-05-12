@@ -18,19 +18,8 @@ export default ({forumGroupId}) => {
 
     return (
         <div className="forumPostContainer">
-            <fieldset className="postMessageContainer">
-                <textarea className="textarea" placeholder="Type message here..." rows="4" cols="50" ref={text}/>
-                <Button className="postButton" onClick={evt => {
-                    addForumPost({
-                        userId: currentUserId,
-                        message: text.current.value,
-                        forumId: foundGroup.id,
-                        date: Date.now()
-                    })
-                }}>Post Message</Button>
-            </fieldset>
-            <h3 className="forumTopicHeader">{foundGroup.name}</h3>
             <div className="forumPosts">
+            <h3 className="forumTopicHeader">{foundGroup.name}</h3>
                 {                   
                     sortedGroupPosts.map(post => {
                         const foundUser = users.find(user => user.id === post.userId)
@@ -53,6 +42,17 @@ export default ({forumGroupId}) => {
                     })
                 }
             </div>
+            <fieldset className="postMessageContainer">
+                <textarea className="textarea" placeholder="Type message here..." rows="4" cols="50" ref={text}/>
+                <Button className="postButton" onClick={evt => {
+                    addForumPost({
+                        userId: currentUserId,
+                        message: text.current.value,
+                        forumId: foundGroup.id,
+                        date: Date.now()
+                    })
+                }}>Post Message</Button>
+            </fieldset>
         </div>
     )
 }

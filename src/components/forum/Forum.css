@@ -3,7 +3,7 @@
     display: inline-block;
     height: auto;
     margin-top: 10px;
-    width: 70%;
+    width: 98%;;
     word-wrap: break-word;
 }
 
@@ -12,9 +12,9 @@
 }
 .forumPosts {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    height: 365px;
+    height: 580px;
     overflow-y: auto;
-    text-align: center;
+    width: 600px;
 }
 
 .postContainer {
@@ -65,7 +65,8 @@
 .postMessageContainer {
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px;
+    margin-top: 150px;
+    padding-left: 5px;
 }
 
 .forumPageHeader {
@@ -116,16 +117,21 @@ h5 {
 .forumGroupDiv {
     display: flex;
     flex-direction: row;
+    height: 40px;
+    position: relative;
+    right: 0;
 }
 
 .createForumGroupButton {
-    margin-left: 60%;
+    margin-left: 63.25%;
     margin-right: 10px;
     width: 170.5px;
     height:38px;
 }
 
 .forumPostContainer {
+    display: flex;
+    flex-direction: row;
     margin-left: 10px;
     margin-top: 10px;
 }
@@ -141,9 +147,14 @@ h5 {
 
 .textarea {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 345px;
 }
 
 .forumDropdownMenu {
     height: 146px;
     overflow-y: auto;
+}
+
+.dropdown {
+    display: inline-block;
 }

@@ -24,7 +24,7 @@
 }
 .comicImage {
     height: 200px;
-    width: 198px !important;
+    width: 200px !important;
 }
 
 .readComic {
@@ -79,7 +79,7 @@
 }
 
 .comicButtonsContainer {
-    bottom: 0px;
+    bottom: 5px;
     display: flex;
     flex-direction: row;
     position: absolute;
@@ -111,4 +111,11 @@
 
 .characters {
     width: 188px;
+}
+
+.placeHolderImage {
+    height: 620px;
+    margin-left: 6%;
+    width: 700px;
+
 }

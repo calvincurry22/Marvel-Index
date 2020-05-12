@@ -1,8 +1,7 @@
-import React, { useContext, useState, useEffect } from "react"
+import React, { useContext, useState } from "react"
 import { UserContext } from "../users/UserProvider"
-import "./AccountEditForm.css"
-import { DropdownToggle, Alert, UncontrolledAlert } from "reactstrap"
 import ImageUpload from "../images/ImageUpload"
+import "./AccountEditForm.css"
 
 
 export default ({toggle}) => {

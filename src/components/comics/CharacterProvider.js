@@ -6,7 +6,6 @@ export const CharacterContext = React.createContext()
 export const CharacterProvider = (props) => {
     const [characters, setCharacters] = useState([])
     const [comics, setComics] = useState([])
-    // const [readComics, setReadComics] = useState([])
     const [selectedComic, setSelectedComic] = useState([])
 
     const getCharacters = () => {
@@ -33,22 +32,6 @@ export const CharacterProvider = (props) => {
             .then(getAddedComics)
     }
 
-    // const getReadComics = () => {
-    //     return fetch("http://localhost:8090/readComics")
-    //         .then(res => res.json())
-    //         .then(setReadComics)
-    // }
-
-    // const addReadComic = comic => {
-    //     return fetch("http://localhost:8090/readComics", {
-    //         method: "POST",
-    //         headers: {
-    //             "Content-Type": "application/json"
-    //         },
-    //         body: JSON.stringify(comic)
-    //     })
-    //         .then(getReadComics)
-    // }
     
     const deleteComic = comicId => {
         return fetch(`http://localhost:8090/userLists/${comicId}`, {
@@ -74,9 +57,6 @@ export const CharacterProvider = (props) => {
         getAddedComics()
     },[])
 
-    // useEffect( () => {
-    //     getReadComics()
-    // },[])
 
     useEffect(() => {
         console.log("****  CHARACTER APPLICATION STATE CHANGED  ****")
@@ -86,10 +66,7 @@ export const CharacterProvider = (props) => {
         console.log("****  MY-LIST APPLICATION STATE CHANGED  ****")
     }, [comics])
 
-    // useEffect( () => {
-    //     console.log("Read Comics Component State Changed")
-    // }, [readComics])
-
+    
     return (
         <CharacterContext.Provider value={{
             characters, comics, addComic, deleteComic

@@ -1,7 +1,7 @@
-import React, { useContext, useState, useEffect } from "react"
+import React, { useContext, useState } from "react"
 import { CharacterContext } from "./CharacterProvider"
-import "./CharacterSearchResults.css"
 import { Modal, ModalHeader, ModalBody, Button, ModalFooter } from "reactstrap"
+import "./CharacterSearchResults.css"
 
 export default ({ characterObj }) => {
 
@@ -14,7 +14,7 @@ export default ({ characterObj }) => {
 
     const imageSource = `${characterObj.thumbnail.path}/portrait_incredible.${characterObj.thumbnail.extension}`
     const comicsArray = characterObj.comicInfo  
-    
+    console.log(characterObj)
     
     
     return (
@@ -36,6 +36,7 @@ export default ({ characterObj }) => {
                             <div className="comics">
                                 {
                                     comicsArray.map(comic => {
+                                        
                                         if(!comic.images[0]) {
                                             return;
                                         } else {
@@ -60,7 +61,7 @@ export default ({ characterObj }) => {
                                     {selectedComic.comic.title}
                                 </ModalHeader>
                                 <ModalBody>
-                                    Add {selectedComic.comic.title} to reading list?
+                                    Add to reading list?
                                 </ModalBody>
                                 <ModalFooter>
                                     <Button color="danger" onClick={evt => {
