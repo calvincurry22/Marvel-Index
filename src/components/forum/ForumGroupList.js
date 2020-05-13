@@ -1,6 +1,8 @@
 import React, { useContext, useState } from "react"
 import { ForumGroupsContext } from "./ForumGroupsProvider"
 import { DropdownItem, Dropdown, DropdownToggle, DropdownMenu } from "reactstrap"
+import Autocomplete from '@material-ui/lab/Autocomplete';
+import { TextField } from "@material-ui/core";
 import "./Forum.css"
 
 export default ({setForumGroupId}) => {
@@ -26,5 +28,6 @@ export default ({setForumGroupId}) => {
             }
             </DropdownMenu>
         </Dropdown>
+       
     )
 }

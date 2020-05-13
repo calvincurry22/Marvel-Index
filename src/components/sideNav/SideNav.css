@@ -4,9 +4,6 @@
 }
 
 .sideNavContainer {
-     /* background-color: lightgray; */
-    /* background-image: linear-gradient(lightgray, grey); */
-    /* background-color: black; */
     background: rgba(0, 0, 0, 0.9);
     border-right: 1px solid black;
     height: auto;

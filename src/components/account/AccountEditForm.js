@@ -9,8 +9,6 @@ export default ({toggle}) => {
     const currentUserId = parseInt(localStorage.getItem("marvel_user"))
     const currentUser = users.find(user => user.id === currentUserId)
     const [ updatedUser, setUser ] = useState(currentUser)
-    const [visible, setVisible] = useState(false)
-    const onDismiss = () => setVisible(!visible)
     const [imageUrl, setImageUrl] = useState('')
     const userName = useRef()
     const email = useRef()

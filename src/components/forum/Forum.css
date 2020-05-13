@@ -39,7 +39,7 @@
 .postMessage {
     font-size: 12px;
     margin-bottom: 0;
-    padding: 0px 20px;
+    padding: 0px 40px;
 }
 .postHeader {
     display: inline-block;
@@ -157,4 +157,11 @@ h5 {
 
 .dropdown {
     display: inline-block;
+}
+
+.editPostIcon {
+    color: gray;
+    cursor: pointer;
+    position: absolute;
+    right: 29em; 
 }

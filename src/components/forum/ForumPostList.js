@@ -1,18 +1,23 @@
-import React, { useContext, useRef } from "react"
+import React, { useContext, useRef, useState } from "react"
 import { UserContext } from "../users/UserProvider"
 import { ForumGroupsContext } from "./ForumGroupsProvider"
 import { Card, CardContent, Avatar } from "@material-ui/core"
 import { ForumContext } from "./ForumProvider"
-import { Button } from "reactstrap"
+import { Button, Modal, ModalHeader, ModalBody } from "reactstrap"
+import EditIcon from '@material-ui/icons/Edit'
+import PostEditForm from "./PostEditForm"
 
 export default ({forumGroupId}) => {
     const { users } = useContext(UserContext)
     const { forumGroups } = useContext(ForumGroupsContext)
-    const { forumPosts, addForumPost } = useContext(ForumContext)
+    const { forumPosts, addForumPost, editForumPost } = useContext(ForumContext)
     const foundGroup = forumGroups.find(group => group.id === forumGroupId)
     const groupPosts = forumPosts.filter(posts => posts.forumId === foundGroup.id)
     const sortedGroupPosts = groupPosts.sort((a, b) => b.date - a.date)
     const currentUserId = parseInt(localStorage.getItem("marvel_user"))
+    const [selectedPost, setSelectedPost] = useState({postObj: {id:0}})
+    const [modal, setModal] = useState(false)
+    const toggle = () => setModal(!modal)
     const text = useRef()
    
 
@@ -31,6 +36,10 @@ export default ({forumGroupId}) => {
                                     <div className="avatarHeader">
                                         <Avatar className="userAvatar" src={foundUser.userImage} />
                                         <p className="postHeader">{foundUser.userName}</p>
+                                        <EditIcon fontSize="small" className="editPostIcon" onClick={evt => {
+                                            setSelectedPost(post)
+                                            toggle()
+                                        }} />
                                     </div>
                                     <p className="postDate">{convertedDate}</p>
                                     <div className="postDateMessage">
@@ -53,6 +62,14 @@ export default ({forumGroupId}) => {
                     })
                 }}>Post Message</Button>
             </fieldset>
+            <Modal isOpen={modal} toggle={toggle}>
+                <ModalHeader toggle={toggle}>
+                    Edit Post
+                </ModalHeader>
+                <ModalBody>
+                    <PostEditForm key={selectedPost.id} selectedPost={selectedPost} editForumPost={editForumPost} toggle={toggle} />
+                </ModalBody>
+            </Modal>
         </div>
     )
 }

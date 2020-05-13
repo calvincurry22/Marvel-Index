@@ -1,5 +1,4 @@
-import React, { useContext, useState } from "react"
-
+import React, { useState } from "react"
 import SideNav from "./sideNav/SideNav"
 import ComicsExplorer from "./comics/ComicsExplorer"
 import Forum from "./forum/Forum"
