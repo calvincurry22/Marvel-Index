@@ -1,8 +1,8 @@
 import React, { useState } from "react"
 import Login from "./Login"
 import Register from "./Register"
-import "./Auth.css"
 import { ModalHeader, Modal, ModalBody, Button } from "reactstrap"
+import "./Auth.css"
 
 
 export default ({toggle}) => {

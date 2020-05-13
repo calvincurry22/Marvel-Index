@@ -2,8 +2,12 @@ import React from "react"
 import { Link } from "react-router-dom"
 import "./SideNav.css"
 import { List, ListItem, ListItemIcon, ListItemText, Icon, SvgIcon } from "@material-ui/core"
-import { DropdownToggle } from "reactstrap"
-
+import MenuBookIcon from '@material-ui/icons/MenuBook';
+import LibraryAddCheckIcon from '@material-ui/icons/LibraryAddCheck';
+import SearchIcon from '@material-ui/icons/Search';
+import ForumIcon from '@material-ui/icons/Forum';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 export default ({logout, toggle}) => (
     <div className="sideNavContainer">
@@ -11,36 +15,36 @@ export default ({logout, toggle}) => (
             <List>
                 <ListItem>
                     <ListItemText>
-                        <Link to="/dashboard">My List</Link>
+                        <Link className ="sideNavLinks" to="/dashboard"><MenuBookIcon className="sideNavIcon" />My List</Link>
                     </ListItemText>
                 </ListItem>
                 <ListItem>
                     <ListItemText>
-                        <Link to="/readComics">View Read Comics</Link>
+                        <Link className ="sideNavLinks" to="/readComics"><LibraryAddCheckIcon className="sideNavIcon" />Read Comics</Link>
                     </ListItemText>
                 </ListItem>
                 <ListItem>
                     <ListItemText>
-                        <Link to="/comicsExplorer">Explore Comics</Link>
+                        <Link className ="sideNavLinks" to="/comicsExplorer"><SearchIcon className="sideNavIcon" />Explore Comics</Link>
                     </ListItemText>
                 </ListItem>
                 <ListItem>
                     <ListItemText>
-                        <Link to="/forum">Forum</Link>
+                        <Link className ="sideNavLinks" to="/forum"><ForumIcon className="sideNavIcon" />Forum</Link>
                     </ListItemText>
                 </ListItem>
                 <ListItem>
                     <ListItemText>
-                        <Link  onClick={evt => {
+                        <Link className ="sideNavLinks" onClick={evt => {
                             toggle()
-                        }}>Account</Link>
+                        }}><AccountCircleIcon className="sideNavIcon" />Account</Link>
                     </ListItemText>
                 </ListItem>
                 <ListItem>
                     <ListItemText>
-                        <Link to="/" onClick={evt => {
+                        <Link className ="sideNavLinks" to="/" onClick={evt => {
                             logout()
-                        }}>Logout</Link>
+                        }}><ExitToAppIcon className="sideNavIcon" />Logout</Link>
                     </ListItemText>
                 </ListItem>
             </List>

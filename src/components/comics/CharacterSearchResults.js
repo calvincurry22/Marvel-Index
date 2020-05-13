@@ -1,9 +1,8 @@
 import React, { useContext, useState, useEffect } from "react"
 import { CharacterContext } from "./CharacterProvider"
-import Character from "./Character"
-import "./CharacterSearchResults.css"
 import { ListGroup, ListGroupItem } from "reactstrap"
 import { Avatar } from "@material-ui/core"
+import "./CharacterSearchResults.css"
 
 
 export const CharacterSearchResults = ({ searchTerms, setCharacter, setActiveList }) => {

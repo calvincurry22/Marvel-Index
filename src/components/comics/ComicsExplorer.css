@@ -1,6 +1,7 @@
 .searchContainer {
     display: flex;
     flex-direction: column;
+    width: 150px;
 }
 
 
@@ -23,10 +24,12 @@
 }
 .comicImage {
     height: 200px;
-    width: 198px !important;
+    width: 200px !important;
 }
 
 .readComic {
+    border-radius: 10px;
+    box-shadow: 0px 5px 8px 0px rgba(50, 50, 50, 1);
     font-size: 13px;
     height: 300px;
     margin-left: 20px;
@@ -35,10 +38,13 @@
 }
 
 .readComicCard {
+    border-radius: 10px;
     height: 300px;
 }
 
 .comicCard {
+    /* border: 1px solid black !important; */
+    box-shadow: 0px 5px 8px 0px rgba(50, 50, 50, 1);
     font-size: 13px;
     height: 320px;
     margin-left: 10px;
@@ -50,11 +56,16 @@
     margin-left: 5px;
 }
 .comicButtons {
+    background-color: cornflowerblue !important;
+    border-color: darkslategray !important;
     font-size: 13px !important;
     height: 30px;
     width: 80px;
 }
 
+.comicButtons:hover{
+    background-color: indigo !important;
+}
 .comic {
     display: inline-block;
     height: auto;
@@ -68,7 +79,7 @@
 }
 
 .comicButtonsContainer {
-    bottom: 0px;
+    bottom: 5px;
     display: flex;
     flex-direction: row;
     position: absolute;
@@ -80,15 +91,31 @@
 .readingListContainer {
     display: flex;
     flex-wrap: wrap;
-    height: 650px;
+    height: 620px;
     margin-left: 20px;
     overflow-y: auto;
-    padding-left: 80px;
+    padding-left: 40px;
 }
 
 .readComicsContainer {
     display: flex;
     flex-wrap: wrap;
-    height: 650px;
+    height: 620px;
     overflow-y: auto;
+    padding-left: 30px;
+}
+
+.search {
+    width: 188px;
+}
+
+.characters {
+    width: 188px;
+}
+
+.placeHolderImage {
+    height: 620px;
+    margin-left: 6%;
+    width: 700px;
+
 }

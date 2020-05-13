@@ -1,33 +1,31 @@
-import React, { useState, useEffect } from "react"
-import { CharacterProvider } from "./CharacterProvider"
+import React, { useState, useEffect, useContext } from "react"
+import { CharacterContext } from "./CharacterProvider"
 import { CharacterSearchBar } from "./CharacterSearchBar"
 import { CharacterSearchResults } from "./CharacterSearchResults"
 import Character from "./Character"
-import ReadingList from "./ReadingList"
 import "./ComicsExplorer.css"
 
 export default () => {
     const [searchTerms, setTerms] = useState(null)
+    const { characters } = useContext(CharacterContext)
+    const defaultCharacter = characters[0]
     const [selectedCharacter, setCharacter] = useState({characterObj: {id:0}})
     const [activeList, setActiveList] = useState("readingList")
     const [components, setComponents] = useState()
-
+    
     const showReadingList = () => (
-        
-        <ReadingList />
+        <Character key={defaultCharacter.id} characterObj={defaultCharacter} />
     )
 
     const showCharacter = () => (
-        
-
-            <Character key={selectedCharacter.character.id} characterObj={selectedCharacter.character} />
-        
-        
+        <Character key={selectedCharacter.character.id} characterObj={selectedCharacter.character} />
     )
+
 
     useEffect(() => {
         if (activeList === "readingList") {
             setComponents(showReadingList)
+            setTerms("a")    
         }
         else {
             console.log(selectedCharacter)
@@ -42,11 +40,8 @@ export default () => {
                 {components}
             </div>
             <div className="searchContainer">
-
-                {/* <CharacterProvider> */}
                     <CharacterSearchBar setTerms={setTerms} selectedCharacter={selectedCharacter}/>
                     <CharacterSearchResults searchTerms={searchTerms} setCharacter={setCharacter} setActiveList={setActiveList} />
-                {/* </CharacterProvider> */}
             </div>
             <div className="characterPanelContainer"></div>
         </div>

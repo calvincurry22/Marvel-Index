@@ -1,11 +1,9 @@
-import React, { useRef, useEffect } from "react"
+import React, { useRef } from "react"
 
 export const CharacterSearchBar = ({ setTerms }) => {
     
     const { terms } = useRef()
    
-   
-
     return (
         <fieldset className="searchBarFieldset">
             <div className="form-group search">

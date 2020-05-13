@@ -1,11 +1,9 @@
 import React, { useState, useRef, useEffect, useContext } from "react"
-import { ForumProvider } from "./ForumProvider"
-import { UserProvider } from "../users/UserProvider"
-import "./Forum.css"
 import { Modal, ModalBody, ModalHeader, ModalFooter, Button } from "reactstrap"
-import { ForumGroupsProvider, ForumGroupsContext } from "./ForumGroupsProvider"
+import { ForumGroupsContext } from "./ForumGroupsProvider"
 import ForumGroupList from "./ForumGroupList"
 import ForumPostList from "./ForumPostList"
+import "./Forum.css"
 
 
 

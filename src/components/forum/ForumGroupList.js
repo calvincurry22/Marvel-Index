@@ -1,7 +1,9 @@
 import React, { useContext, useState } from "react"
 import { ForumGroupsContext } from "./ForumGroupsProvider"
-import "./Forum.css"
 import { DropdownItem, Dropdown, DropdownToggle, DropdownMenu } from "reactstrap"
+import Autocomplete from '@material-ui/lab/Autocomplete';
+import { TextField } from "@material-ui/core";
+import "./Forum.css"
 
 export default ({setForumGroupId}) => {
     const { forumGroups } = useContext(ForumGroupsContext)
@@ -14,7 +16,7 @@ export default ({setForumGroupId}) => {
             <DropdownToggle caret>
                 Choose A Topic
             </DropdownToggle>
-            <DropdownMenu>
+            <DropdownMenu className="forumDropdownMenu">
             {
                 forumGroups.map( group => {
                     return (
@@ -26,5 +28,6 @@ export default ({setForumGroupId}) => {
             }
             </DropdownMenu>
         </Dropdown>
+       
     )
 }

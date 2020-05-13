@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 import { CharacterContext } from "./CharacterProvider"
-import { Button, Card, CardImg, CardBody, CardTitle, CardText } from "reactstrap"
+import { Button, Card, CardImg, CardBody, CardTitle } from "reactstrap"
 import { ReadComicsContext } from "./ReadComicsProvider"
 
 
