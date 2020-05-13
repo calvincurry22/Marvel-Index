@@ -35,7 +35,7 @@ export default ({setImageUrl}) => {
             { loading ? (
                 <p>Loading...</p>
             ): (
-                <img src={image} style={{width:'300px'}} />
+                <img src={image} alt="avatar" style={{width:'300px'}} />
             )}
         </div>
     )

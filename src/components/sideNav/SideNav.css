@@ -16,5 +16,16 @@
 }
 
 .sideNavLinks {
+    color: dodgerblue;
+    cursor: pointer;
     font-size: 13px;
+}
+
+.sideNavLinks:hover {
+    color: darkblue;
+    text-decoration: underline;
+}
+
+.sideNavIcon:hover {
+    color: darkblue;
 }

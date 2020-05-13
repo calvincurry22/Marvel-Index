@@ -24,19 +24,6 @@ export const ForumGroupsProvider = (props) => {
             .then(getForumGroups)
     }
     
-    const editForumGroup = forumGroup => {
-        return fetch(`http://localhost:8090/forumPosts/${forumGroup.id}`, {
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(forumGroup)
-        })
-            .then(getForumGroups)
-    }
-
-
-    
     /*
         Load all characters when the component is mounted. Ensure that
         an empty array is the second argument to avoid infinite loop.

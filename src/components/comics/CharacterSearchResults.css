@@ -7,9 +7,7 @@
 }
 
 .href {
-    /* color: #479cf7d3; */
     color: black;
-    /* text-decoration: underline; */
 }
 
 .href:hover {
@@ -24,7 +22,7 @@
     padding-left: 0.5rem;
 }
 
-a {
+.comicExplorerAnchor {
     width: 150px;
     height: 225px;
 }

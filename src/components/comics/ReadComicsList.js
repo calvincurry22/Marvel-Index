@@ -23,9 +23,6 @@ export default () => {
                                         {comicObj.title} 
                                     </CardTitle>
                                 </Card>
-
-                                {/* <img src={comicObj.image} alt="comic_image"/>
-                                <p>{comicObj.title}</p> */}
                             </div>
                         )
                     })

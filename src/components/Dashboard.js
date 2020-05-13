@@ -30,7 +30,7 @@ export default ({logout}) => {
                 <nav className="headerNav">
                    <h6 className="headerWelcome">Welcome</h6>
                 </nav>
-                
+
                 <Router>
                     <div className="routerDiv">
                         <SideNav  logout={logout} toggle={toggleAccount}/>
@@ -64,7 +64,6 @@ export default ({logout}) => {
                         </div>
                     </div>
                 </Router>
-
             </div>
         </>
     )  

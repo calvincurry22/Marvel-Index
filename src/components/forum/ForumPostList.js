@@ -24,7 +24,7 @@ export default ({forumGroupId}) => {
     return (
         <div className="forumPostContainer">
             <div className="forumPosts">
-            <h3 className="forumTopicHeader">{foundGroup.name}</h3>
+                <h3 className="forumTopicHeader">{foundGroup.name}</h3>
                 {                   
                     sortedGroupPosts.map(post => {
                         const foundUser = users.find(user => user.id === post.userId)

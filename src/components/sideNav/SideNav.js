@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import "./SideNav.css"
-import { List, ListItem, ListItemIcon, ListItemText, Icon, SvgIcon } from "@material-ui/core"
+import { List, ListItem, ListItemText, Icon, SvgIcon } from "@material-ui/core"
 import MenuBookIcon from '@material-ui/icons/MenuBook';
 import LibraryAddCheckIcon from '@material-ui/icons/LibraryAddCheck';
 import SearchIcon from '@material-ui/icons/Search';
@@ -35,9 +35,9 @@ export default ({logout, toggle}) => (
                 </ListItem>
                 <ListItem>
                     <ListItemText>
-                        <Link className ="sideNavLinks" onClick={evt => {
+                        <div className ="sideNavLinks account" onClick={evt => {
                             toggle()
-                        }}><AccountCircleIcon className="sideNavIcon" />Account</Link>
+                        }}><AccountCircleIcon className="sideNavIcon" />Account</div>
                     </ListItemText>
                 </ListItem>
                 <ListItem>
