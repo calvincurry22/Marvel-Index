@@ -12,7 +12,7 @@ export default ({ characterObj }) => {
     const [selectedComic, setSelectedComic] = useState({comic: {id:0}})
     const currentUserId = parseInt(localStorage.getItem("marvel_user"))
 
-    const imageSource = `${characterObj.thumbnail.path}/portrait_incredible.${characterObj.thumbnail.extension}`
+    const imageSource = `${characterObj.thumbnail.path}.${characterObj.thumbnail.extension}`
     const comicsArray = characterObj.comicInfo  
     
     return (

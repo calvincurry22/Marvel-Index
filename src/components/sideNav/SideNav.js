@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import "./SideNav.css"
-import { List, ListItem, ListItemText, Icon, SvgIcon } from "@material-ui/core"
+import { List, ListItem, ListItemText } from "@material-ui/core"
 import MenuBookIcon from '@material-ui/icons/MenuBook';
 import LibraryAddCheckIcon from '@material-ui/icons/LibraryAddCheck';
 import SearchIcon from '@material-ui/icons/Search';

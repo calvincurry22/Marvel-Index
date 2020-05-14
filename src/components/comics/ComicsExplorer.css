@@ -59,16 +59,20 @@
     border-color: darkslategray !important;
     font-size: 13px !important;
     height: 30px;
+    padding: 3px !important;
     width: 80px;
 }
 
+.readButton {
+    font-size: 10px !important;
+}
 .comicButtons:hover{
     background-color: indigo !important;
 }
+
 .comic {
     display: inline-block;
-    height: auto;
-    
+    height: auto;   
 }
 
 .cardBody {
