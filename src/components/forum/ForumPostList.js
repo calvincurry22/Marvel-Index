@@ -19,7 +19,10 @@ export default ({forumGroupId}) => {
     const [modal, setModal] = useState(false)
     const toggle = () => setModal(!modal)
     const text = useRef()
-   
+    
+    const clearText = () => {
+        text.current.value = null
+    }
 
     return (
         <div className="forumPostContainer">
@@ -60,6 +63,7 @@ export default ({forumGroupId}) => {
                         forumId: foundGroup.id,
                         date: Date.now()
                     })
+                    clearText()
                 }}>Post Message</Button>
             </fieldset>
             <Modal isOpen={modal} toggle={toggle}>

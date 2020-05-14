@@ -12,8 +12,9 @@ export default ({ selectedPost, editForumPost, toggle }) => {
 
 
     return (
-        <div>
+        <div className="postEditFormBody">
             <textarea 
+                className="postEditTextarea"
                 defaultValue={selectedPost.message}
                 name="message"
                 onChange={handleControlledInputChange}
@@ -22,7 +23,7 @@ export default ({ selectedPost, editForumPost, toggle }) => {
             <Button onClick={evt => {
                 editForumPost(updatedPost)
                 toggle()
-            }}>Save</Button>
+            }}>Update Post</Button>
         </div>
     )
 }

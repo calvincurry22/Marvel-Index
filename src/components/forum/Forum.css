@@ -163,3 +163,14 @@ h5 {
     position: absolute;
     right: 29em; 
 }
+
+.postEditTextarea {
+    height: 150px;
+    margin-bottom: 10px;
+    width: 465px;
+}
+
+.postEditFormBody {
+    display: flex;
+    flex-direction: column;
+}
