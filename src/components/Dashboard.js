@@ -6,7 +6,6 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-d
 import "./comics/CharacterSearchResults.css"
 import "./Dashboard.css"
 import "./sideNav/SideNav.css"
-import ComicsList from "./comics/ComicsList"
 import { ForumGroupsProvider } from "./forum/ForumGroupsProvider"
 import { UserProvider } from "./users/UserProvider"
 import AccountEditForm from "./account/AccountEditForm"
@@ -16,6 +15,7 @@ import { ReadComicsProvider } from "./comics/ReadComicsProvider"
 import ReadComicsList from "./comics/ReadComicsList"
 import Auth from "./auth/Auth"
 import { Modal, ModalBody, ModalHeader } from "reactstrap"
+import MyList from "./comics/MyList"
 
 
 
@@ -42,7 +42,7 @@ export default ({logout}) => {
                                             <ForumProvider>
                                                 <UserProvider>
                                                     <Route path="/" exact  component={Auth} />
-                                                    <Route path="/dashboard" exact component={ComicsList} />
+                                                    <Route path="/dashboard" exact component={MyList} />
                                                     <Route path="/readComics" exact component={ReadComicsList} />
                                                     <Route path="/comicsExplorer" exact component={ComicsExplorer} />
                                                     <Route path="/forum" exact component={Forum} />
