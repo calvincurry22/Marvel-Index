@@ -1,13 +1,12 @@
-import React, { useContext } from "react"
+import React, { useContext, useState } from "react"
 import { CharacterContext } from "./CharacterProvider"
-import { Button, Card, CardImg, CardBody, CardTitle } from "reactstrap"
+import { Button, Card, CardImg, CardBody, CardTitle, Spinner } from "reactstrap"
 import { ReadComicsContext } from "./ReadComicsProvider"
 
 
-export default () => {
+export default ({ setLoading }) => {
     const { comics, deleteComic } = useContext(CharacterContext)
     const { addReadComic } = useContext(ReadComicsContext)
-
     const currentUserId = parseInt(localStorage.getItem("marvel_user"))
     const filteredComics = comics.filter(comic => comic.userId === currentUserId)
 
@@ -25,6 +24,7 @@ export default () => {
                                 <div className="comicButtonsContainer">
                                     <Button className="comicButtons readButton" onClick={evt => {
                                         evt.preventDefault()
+                                        setLoading(true)
                                         addReadComic({
                                             userId: comicObj.userId,
                                             title: comicObj.title,
@@ -32,16 +32,17 @@ export default () => {
                                             purchaseUrl: comicObj.purchaseUrl,
                                             comicId: comicObj.comicId
                                         })
-                                        .then(() => {
-                                            deleteComic(comicObj.id)
-                                        })
+                                        .then( () => deleteComic(comicObj.id) )
+                                        .then( () => setLoading(false) )
+                                    
+                                        
                                     }}>Mark as Read</Button>
                                     <Button className="comicButtons" onClick={evt => {
                                         evt.preventDefault()
                                         deleteComic(comicObj.id)
                                     }}>Remove</Button>
                                 </div>
-                            </CardBody>                           
+                            </CardBody>    
                         </Card> 
                     )
                 })
