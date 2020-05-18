@@ -107,7 +107,7 @@ export default ({toggle}) => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="password">Password:</label>
-                    <input type="password" name="customer" className="form-control"
+                    <input type="password" name="password" className="form-control"
                         defaultValue={currentUser.password}
                     />
                 </div>
