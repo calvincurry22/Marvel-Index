@@ -39,10 +39,15 @@ export default ({forumGroupId}) => {
                                     <div className="avatarHeader">
                                         <Avatar className="userAvatar" src={foundUser.userImage} />
                                         <p className="postHeader">{foundUser.userName}</p>
-                                        <EditIcon fontSize="small" className="editPostIcon" onClick={evt => {
-                                            setSelectedPost(post)
-                                            toggle()
-                                        }} />
+                                        {
+                                            (post.userId === currentUserId) ? (
+
+                                                <EditIcon fontSize="small" className="editPostIcon" onClick={evt => {
+                                                    setSelectedPost(post)
+                                                    toggle()
+                                                }} /> ) : <div></div>
+                                            
+                                        }
                                     </div>
                                     <p className="postDate">{convertedDate}</p>
                                     <div className="postDateMessage">
