@@ -22,7 +22,7 @@ import MyList from "./comics/MyList"
 export default ({logout}) => {
     const [accountModal, setAccountModal] = useState(false)
     const toggleAccount = () => setAccountModal(!accountModal)
-    
+   
     return (
         <>
             <div className="mainContainer">

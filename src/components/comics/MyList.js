@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import UserReadingList from "./UserReadingList"
 import { Spinner } from "reactstrap"
 
-export default () => {
+export default ({ setTotal }) => {
     const [loading, setLoading] = useState(false)
     return (
         <div className="myListContainer">

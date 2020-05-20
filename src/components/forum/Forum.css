@@ -3,7 +3,7 @@
     display: inline-block;
     height: auto;
     margin-top: 10px;
-    width: 98%;;
+    width: 571px;;
     word-wrap: break-word;
 }
 
@@ -160,8 +160,9 @@ h5 {
 .editPostIcon {
     color: gray;
     cursor: pointer;
-    position: absolute;
-    right: 29em; 
+    /* position: absolute;
+    right: 30em;  */
+    margin-left: 70%;
 }
 
 .postEditTextarea {
