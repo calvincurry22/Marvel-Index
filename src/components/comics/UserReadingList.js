@@ -9,7 +9,7 @@ export default ({ setLoading }) => {
     const { addReadComic } = useContext(ReadComicsContext)
     const currentUserId = parseInt(localStorage.getItem("marvel_user"))
     const filteredComics = comics.filter(comic => comic.userId === currentUserId)
-
+    
     return (
         <div className="readingListContainer">
             {
