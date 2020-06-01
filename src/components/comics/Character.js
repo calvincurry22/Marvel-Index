@@ -7,18 +7,18 @@ export default ({ characterObj }) => {
 
     const [modal, setModal] = useState(false)
     const toggle = () => setModal(!modal)
-    
+
     const { addComic } = useContext(CharacterContext)
-    const [selectedComic, setSelectedComic] = useState({comic: {id:0}})
+    const [selectedComic, setSelectedComic] = useState({ comic: { id: 0 } })
     const currentUserId = parseInt(localStorage.getItem("marvel_user"))
 
     const imageSource = `${characterObj.thumbnail.path}.${characterObj.thumbnail.extension}`
-    const comicsArray = characterObj.comicInfo  
-    
+    const comicsArray = characterObj.comicInfo
+
     return (
         <>
             <div className="characterPanel">
-        
+
                 <div className="characterContainer">
                     <h2 className="characterName">{characterObj.name}</h2>
                     <div className="imageDescriptionContainer">
@@ -26,11 +26,11 @@ export default ({ characterObj }) => {
                         <p className="characterDescription"><strong>DESCRIPTION:</strong> {characterObj.description}</p>
                     </div>
                 </div>
-                
+
                 <div className="comicsContainer">
                     <h2 className="comicsHeader">Associated Comics</h2>
-                        
-                    <div className="comicDetailsContainer">
+
+                    {/* <div className="comicDetailsContainer">
                         <div className="comics">
                             {
                                 comicsArray.map(comic => {
@@ -53,34 +53,33 @@ export default ({ characterObj }) => {
                                     }
                                 })
                             }
-                        </div>
-                        <Modal isOpen={modal} toggle={toggle}>
-                            <ModalHeader toggle={toggle}>
-                                {selectedComic.comic.title}
-                            </ModalHeader>
-                            <ModalBody>
-                                Add to reading list?
+                        </div> */}
+                    <Modal isOpen={modal} toggle={toggle}>
+                        <ModalHeader toggle={toggle}>
+                            {selectedComic.comic.title}
+                        </ModalHeader>
+                        <ModalBody>
+                            Add to reading list?
                             </ModalBody>
-                            <ModalFooter>
-                                <Button color="danger" onClick={evt => {
-                                    evt.preventDefault()
-                                    addComic({
-                                        userId: currentUserId,
-                                        title: selectedComic.comic.title,
-                                        image: `${selectedComic.comic.images[0].path}.${selectedComic.comic.images[0].extension}`,
-                                        purchaseUrl: selectedComic.comic.urls[0].url,
-                                        comidId: selectedComic.comic.id
-                                    })
-                                    toggle()
-                                }}>Add</Button>
-                            </ModalFooter>
-                        </Modal>
-                    </div>
+                        <ModalFooter>
+                            <Button color="danger" onClick={evt => {
+                                evt.preventDefault()
+                                addComic({
+                                    userId: currentUserId,
+                                    title: selectedComic.comic.title,
+                                    image: `${selectedComic.comic.images[0].path}.${selectedComic.comic.images[0].extension}`,
+                                    purchaseUrl: selectedComic.comic.urls[0].url,
+                                    comidId: selectedComic.comic.id
+                                })
+                                toggle()
+                            }}>Add</Button>
+                        </ModalFooter>
+                    </Modal>
                 </div>
             </div>
-                        
+
+
         </>
     )
 }
-            
-            
+
