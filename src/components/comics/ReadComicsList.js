@@ -17,7 +17,7 @@ export default () => {
                     foundReadComics.map(comicObj => {
                         return (
 
-                            <div className="readComic">
+                            <div key={comicObj.id} className="readComic">
                                 <Card className="readComicCard">
                                     <CardImg className="comicImage" src={comicObj.image} alt="comic_image" />
                                     <CardTitle>

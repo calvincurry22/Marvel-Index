@@ -2,23 +2,24 @@ import React, { useContext, useState } from "react"
 import { CharacterContext } from "./CharacterProvider"
 import { Modal, ModalHeader, ModalBody, Button, ModalFooter } from "reactstrap"
 import "./CharacterSearchResults.css"
+import { ReadComicsContext } from "./ReadComicsProvider"
 
 export default ({ characterObj }) => {
 
     const [modal, setModal] = useState(false)
     const toggle = () => setModal(!modal)
-    
-    const { addComic } = useContext(CharacterContext)
-    const [selectedComic, setSelectedComic] = useState({comic: {id:0}})
-    const currentUserId = parseInt(localStorage.getItem("marvel_user"))
 
+    const { comics, addComic } = useContext(CharacterContext)
+    const { readComics } = useContext(ReadComicsContext)
+    const [selectedComic, setSelectedComic] = useState({ comic: { id: 0 } })
+    const currentUserId = parseInt(localStorage.getItem("marvel_user"))
     const imageSource = `${characterObj.thumbnail.path}.${characterObj.thumbnail.extension}`
-    const comicsArray = characterObj.comicInfo  
-    
+    const comicsArray = characterObj.comicInfo
+
     return (
         <>
             <div className="characterPanel">
-        
+
                 <div className="characterContainer">
                     <h2 className="characterName">{characterObj.name}</h2>
                     <div className="imageDescriptionContainer">
@@ -26,30 +27,40 @@ export default ({ characterObj }) => {
                         <p className="characterDescription"><strong>DESCRIPTION:</strong> {characterObj.description}</p>
                     </div>
                 </div>
-                
+
                 <div className="comicsContainer">
                     <h2 className="comicsHeader">Associated Comics</h2>
-                        
+
                     <div className="comicDetailsContainer">
                         <div className="comics">
                             {
                                 comicsArray.map(comic => {
-                                    
-                                    if(!comic.images[0]) {
+
+                                    if (!comic.images[0]) {
                                         return false;
                                     } else {
-                                    const comicImage = comic.images[0].path + "/portrait_xlarge." + comic.images[0].extension
-                                    return (
-                                        <div className="comic">
-                                            <span className="fakeLink href:hover comicExplorerAnchor" onClick={evt => {
-                                                console.log(comic)
-                                                evt.preventDefault()
-                                                setSelectedComic({comic})
-                                                toggle()
-                                                
-                                            }}><img src={comicImage} alt="comic" /></span>
-                                        </div>
-                                    )
+                                        const comicImage = comic.images[0].path + "/portrait_xlarge." + comic.images[0].extension
+                                        return (
+                                            <div key={comic.id} className="comic">
+                                                <span className="fakeLink href:hover comicExplorerAnchor" onClick={evt => {
+                                                    evt.preventDefault()
+                                                    const comicExistsOnReadingList = comics.find(comicObj => {
+                                                        return comicObj.userId === currentUserId && comicObj.comicId === comic.id
+                                                    })
+                                                    const comicExistsOnReadList = readComics.find(comicObj => {
+                                                        return comicObj.userId === currentUserId && comicObj.comicId === comic.id
+                                                    })
+                                                    if (comicExistsOnReadingList) {
+                                                        alert("This comic is already on your reading list")
+                                                    } else if (comicExistsOnReadList) {
+                                                        alert("You have already read this comic")
+                                                    } else {
+                                                        setSelectedComic({ comic })
+                                                        toggle()
+                                                    }
+                                                }}><img src={comicImage} alt="comic" /></span>
+                                            </div>
+                                        )
                                     }
                                 })
                             }
@@ -69,7 +80,7 @@ export default ({ characterObj }) => {
                                         title: selectedComic.comic.title,
                                         image: `${selectedComic.comic.images[0].path}.${selectedComic.comic.images[0].extension}`,
                                         purchaseUrl: selectedComic.comic.urls[0].url,
-                                        comidId: selectedComic.comic.id
+                                        comicId: selectedComic.comic.id
                                     })
                                     toggle()
                                 }}>Add</Button>
@@ -78,9 +89,8 @@ export default ({ characterObj }) => {
                     </div>
                 </div>
             </div>
-                        
+
         </>
     )
 }
-            
-            
+

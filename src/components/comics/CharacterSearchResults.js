@@ -8,7 +8,7 @@ import "./CharacterSearchResults.css"
 export const CharacterSearchResults = ({ searchTerms, setCharacter, setActiveList }) => {
     const { characters } = useContext(CharacterContext)
     const [filteredCharacters, setFiltered] = useState([])
-   
+
     useEffect(() => {
         if (searchTerms !== "") {
             const subset = characters.filter(character => character.name.toLowerCase().includes(searchTerms))
@@ -25,14 +25,15 @@ export const CharacterSearchResults = ({ searchTerms, setCharacter, setActiveLis
                     {
                         filteredCharacters.map(character => {
                             const image = `${character.thumbnail.path}.${character.thumbnail.extension}`
-                        return (
+                            return (
                                 <ListGroupItem
+                                    key={character.id}
                                     className="fakeLink href"
-                                    onClick={ evt => {
-                                        
-                                        setCharacter({character})
+                                    onClick={evt => {
+
+                                        setCharacter({ character })
                                         setActiveList("characterSelected")
-                                        
+
                                     }}
                                 ><Avatar src={image} /> {character.name}</ListGroupItem>
                             )

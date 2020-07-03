@@ -1,6 +1,6 @@
-import React, { useContext, useState } from "react"
+import React, { useContext } from "react"
 import { CharacterContext } from "./CharacterProvider"
-import { Button, Card, CardImg, CardBody, CardTitle, Spinner } from "reactstrap"
+import { Button, Card, CardImg, CardBody, CardTitle } from "reactstrap"
 import { ReadComicsContext } from "./ReadComicsProvider"
 
 
@@ -9,15 +9,15 @@ export default ({ setLoading }) => {
     const { addReadComic } = useContext(ReadComicsContext)
     const currentUserId = parseInt(localStorage.getItem("marvel_user"))
     const filteredComics = comics.filter(comic => comic.userId === currentUserId)
-    
+
     return (
         <div className="readingListContainer">
             {
-                filteredComics.map( comicObj => {
-                    return (   
-                        <Card className="comicCard">
+                filteredComics.map(comicObj => {
+                    return (
+                        <Card key={comicObj.id} className="comicCard">
                             <a className="comicAnchor" href={comicObj.purchaseUrl} target="_blank" rel="noopener noreferrer">
-                                <CardImg className="comicImage" src={comicObj.image} alt="comic_image"/>
+                                <CardImg className="comicImage" src={comicObj.image} alt="comic_image" />
                             </a>
                             <CardTitle className="cardTitle">{comicObj.title}</CardTitle>
                             <CardBody className="cardBody">
@@ -32,18 +32,18 @@ export default ({ setLoading }) => {
                                             purchaseUrl: comicObj.purchaseUrl,
                                             comicId: comicObj.comicId
                                         })
-                                        .then( () => deleteComic(comicObj.id) )
-                                        .then( () => setLoading(false) )
-                                    
-                                        
+                                            .then(() => deleteComic(comicObj.id))
+                                            .then(() => setLoading(false))
+
+
                                     }}>Mark as Read</Button>
                                     <Button className="comicButtons" onClick={evt => {
                                         evt.preventDefault()
                                         deleteComic(comicObj.id)
                                     }}>Remove</Button>
                                 </div>
-                            </CardBody>    
-                        </Card> 
+                            </CardBody>
+                        </Card>
                     )
                 })
             }
