@@ -104,9 +104,15 @@
 .readComicsContainer {
     display: flex;
     flex-wrap: wrap;
-    height: 620px;
+    height: 580px;
     overflow-y: auto;
     padding-left: 30px;
+}
+
+.readTotal {
+    font-size: 20px;
+    margin-bottom: 0;
+    margin-left: 10px;
 }
 
 .search {

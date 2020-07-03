@@ -19,21 +19,21 @@ import MyList from "./comics/MyList"
 
 
 
-export default ({logout}) => {
+export default ({ logout }) => {
     const [accountModal, setAccountModal] = useState(false)
     const toggleAccount = () => setAccountModal(!accountModal)
-   
+
     return (
         <>
             <div className="mainContainer">
-                
+
                 <nav className="headerNav">
-                   <h6 className="headerWelcome">Welcome</h6>
+                    <h6 className="headerWelcome">Welcome</h6>
                 </nav>
 
                 <Router>
                     <div className="routerDiv">
-                        <SideNav  logout={logout} toggle={toggleAccount}/>
+                        <SideNav logout={logout} toggle={toggleAccount} />
                         <div className="routeContainer">
                             <Switch>
                                 <ForumGroupsProvider>
@@ -41,17 +41,17 @@ export default ({logout}) => {
                                         <ReadComicsProvider>
                                             <ForumProvider>
                                                 <UserProvider>
-                                                    <Route path="/" exact  component={Auth} />
+                                                    <Route path="/" exact component={Auth} />
                                                     <Route path="/dashboard" exact component={MyList} />
                                                     <Route path="/readComics" exact component={ReadComicsList} />
                                                     <Route path="/comicsExplorer" exact component={ComicsExplorer} />
                                                     <Route path="/forum" exact component={Forum} />
                                                     <Modal isOpen={accountModal} toggle={toggleAccount}>
                                                         <ModalHeader toggle={toggleAccount}>
-                                                            <h2>Account Info</h2>
+                                                            <p className="accounInfoHeader">Account Info</p>
                                                         </ModalHeader>
                                                         <ModalBody>
-                                                            <AccountEditForm  toggle={toggleAccount}/>
+                                                            <AccountEditForm toggle={toggleAccount} />
                                                         </ModalBody>
                                                     </Modal>
                                                 </UserProvider>
@@ -59,13 +59,13 @@ export default ({logout}) => {
                                         </ReadComicsProvider>
                                     </CharacterProvider>
                                 </ForumGroupsProvider>
-                            </Switch>                          
+                            </Switch>
                             <Redirect to="/dashboard" />
                         </div>
                     </div>
                 </Router>
             </div>
         </>
-    )  
+    )
 }
 

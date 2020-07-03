@@ -11,16 +11,17 @@ export default () => {
     return (
         <div>
             <h1 className="readComicsHeader">Read Comics</h1>
+            <p className="readTotal">Total Read: {foundReadComics.length}</p>
             <div className="readComicsContainer">
                 {
                     foundReadComics.map(comicObj => {
                         return (
 
-                            <div className="readComic">
+                            <div key={comicObj.id} className="readComic">
                                 <Card className="readComicCard">
                                     <CardImg className="comicImage" src={comicObj.image} alt="comic_image" />
                                     <CardTitle>
-                                        {comicObj.title} 
+                                        {comicObj.title}
                                     </CardTitle>
                                 </Card>
                             </div>

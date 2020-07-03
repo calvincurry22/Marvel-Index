@@ -3,22 +3,22 @@ import { ForumGroupsContext } from "./ForumGroupsProvider"
 import { DropdownItem, Dropdown, DropdownToggle, DropdownMenu } from "reactstrap"
 import "./Forum.css"
 
-export default ({setForumGroupId}) => {
+export default ({ setForumGroupId }) => {
     const { forumGroups } = useContext(ForumGroupsContext)
     const [dropdownOpen, setDropdownOpen] = useState(false);
 
     const toggle = () => setDropdownOpen(prevState => !prevState);
 
-    return (  
+    return (
         <Dropdown isOpen={dropdownOpen} toggle={toggle}>
             <DropdownToggle caret>
                 Choose A Topic
             </DropdownToggle>
             <DropdownMenu className="forumDropdownMenu">
                 {
-                    forumGroups.map( group => {
+                    forumGroups.map(group => {
                         return (
-                            <DropdownItem className="fakeLink href" onClick={evt => {
+                            <DropdownItem key={group.id} className="fakeLink href" onClick={evt => {
                                 setForumGroupId(group.id)
                             }}>{group.name}</DropdownItem>
                         )
@@ -26,6 +26,6 @@ export default ({setForumGroupId}) => {
                 }
             </DropdownMenu>
         </Dropdown>
-       
+
     )
 }
