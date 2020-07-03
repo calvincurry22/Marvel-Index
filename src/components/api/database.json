@@ -1,0 +1,239 @@
+{
+  "forumGroups": [
+    {
+      "id": 1,
+      "name": "Marvel MCU"
+    },
+    {
+      "name": "Stan Lee",
+      "id": 3
+    },
+    {
+      "name": "Dr. Strange",
+      "id": 4
+    },
+    {
+      "name": "Fav Hero",
+      "id": 5
+    },
+    {
+      "name": "X-Men",
+      "id": 6
+    },
+    {
+      "name": "X-Force",
+      "id": 7
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "calvincurry22@gmail.com",
+      "password": "123",
+      "name": "Calvin Curry",
+      "userName": "RealStarlord22",
+      "userImage": "https://res.cloudinary.com/dxcf8k91m/image/upload/v1592532556/calvin/epmx6hshujogkvcxjgc7.jpg"
+    },
+    {
+      "id": 2,
+      "email": "bccurry7@gmail.com",
+      "password": "123",
+      "name": "Brandon Curry",
+      "userName": "Jewel7",
+      "userImage": "https://res.cloudinary.com/dxcf8k91m/image/upload/v1589825500/calvin/wc704s7v0k3vooakx1lo.jpg"
+    },
+    {
+      "id": 3,
+      "email": "me@me.com",
+      "password": "123",
+      "name": "me",
+      "userName": "StarJammer78",
+      "userImage": "https://res.cloudinary.com/dxcf8k91m/image/upload/v1590020923/calvin/zucvxw47ymgkzqhejiwh.png"
+    }
+  ],
+  "userLists": [
+    {
+      "userId": 1,
+      "title": "Guardians Of The Galaxy Annual (2019) #1",
+      "image": "http://i.annihil.us/u/prod/marvel/i/mg/c/b0/5ced97cf6e221.jpg",
+      "purchaseUrl": "http://marvel.com/comics/issue/76749/guardians_of_the_galaxy_annual_2019_1?utm_campaign=apiRef&utm_source=6d001b15224bd9411b67705ef5d04bb5",
+      "comidId": 76749,
+      "id": 7
+    },
+    {
+      "userId": 1,
+      "title": "Doctor Doom (2019) #6",
+      "image": "http://i.annihil.us/u/prod/marvel/i/mg/c/50/5e53eb6a2eb65.jpg",
+      "purchaseUrl": "http://marvel.com/comics/issue/78525/doctor_doom_2019_6?utm_campaign=apiRef&utm_source=6d001b15224bd9411b67705ef5d04bb5",
+      "comidId": 78525,
+      "id": 8
+    },
+    {
+      "userId": 1,
+      "title": "Marvel Monograph: The Art of Arthur Adams - X-Men (Trade Paperback)",
+      "image": "http://i.annihil.us/u/prod/marvel/i/mg/f/30/5e4da43df24dd.jpg",
+      "purchaseUrl": "http://marvel.com/comics/collection/82367/marvel_monograph_the_art_of_arthur_adams_-_x-men_trade_paperback?utm_campaign=apiRef&utm_source=6d001b15224bd9411b67705ef5d04bb5",
+      "comidId": 82367,
+      "id": 9
+    },
+    {
+      "userId": 1,
+      "title": "Black Panther (2018) #19",
+      "image": "http://i.annihil.us/u/prod/marvel/i/mg/e/60/5defb2da1222a.jpg",
+      "purchaseUrl": "http://marvel.com/comics/issue/77789/black_panther_2018_19?utm_campaign=apiRef&utm_source=6d001b15224bd9411b67705ef5d04bb5",
+      "comidId": 77789,
+      "id": 10
+    }
+  ],
+  "forumPosts": [
+    {
+      "userId": 1,
+      "forumId": 1,
+      "message": "StarLord forever",
+      "date": 1588453388288,
+      "id": 1
+    },
+    {
+      "userId": 1,
+      "forumId": 1,
+      "message": "Does anyone know who the next Big Bad will be in the MCU after Thanos?",
+      "date": 1588454257133,
+      "id": 3
+    },
+    {
+      "userId": 2,
+      "forumId": 1,
+      "message": "If we think about how the concept of time travel was introduced in Avengers Endgame, I think it's safe to say that Kang the Counqueror could be the next Big Bad on the way.",
+      "date": 1588461546887,
+      "id": 12
+    },
+    {
+      "userId": 3,
+      "message": "Excelsior!!!",
+      "forumId": 3,
+      "date": 1588869486795,
+      "id": 16
+    },
+    {
+      "userId": 1,
+      "message": "Steve is like Dr Strange because he is a wizard at JS",
+      "forumId": 4,
+      "date": 1589393993335,
+      "id": 18
+    },
+    {
+      "userId": 3,
+      "message": "Galactus",
+      "forumId": 1,
+      "date": 1589859374961,
+      "id": 20
+    },
+    {
+      "userId": 1,
+      "message": "Too early for Galactus, I would love to see Kang or begin setting up Doctor Doom. Victor Von Doom has such a great story that would work well on the big screen!",
+      "forumId": 1,
+      "date": 1589859468834,
+      "id": 21
+    },
+    {
+      "userId": 3,
+      "message": "Agreed!",
+      "forumId": 4,
+      "date": 1589899778633,
+      "id": 22
+    },
+    {
+      "userId": 3,
+      "message": "My fav hero is Blue Marvel",
+      "forumId": 5,
+      "date": 1589899806359,
+      "id": 23
+    },
+    {
+      "userId": 3,
+      "message": "Wolverine",
+      "forumId": 6,
+      "date": 1590020899359,
+      "id": 24
+    },
+    {
+      "userId": 1,
+      "message": "whassup!",
+      "forumId": 1,
+      "date": 1592532379827,
+      "id": 25
+    },
+    {
+      "userId": 1,
+      "message": "hi",
+      "forumId": 4,
+      "date": 1592532424980,
+      "id": 26
+    },
+    {
+      "userId": 1,
+      "message": "k",
+      "forumId": 7,
+      "date": 1592532438751,
+      "id": 27
+    }
+  ],
+  "readComics": [
+    {
+      "userId": 1,
+      "title": "X-Men: Days of Future Present (2020)",
+      "image": "http://i.annihil.us/u/prod/marvel/i/mg/b/50/5eb5b20f31da0.jpg",
+      "purchaseUrl": "http://marvel.com/comics/issue/91250/x-men_days_of_future_present_2020?utm_campaign=apiRef&utm_source=6d001b15224bd9411b67705ef5d04bb5",
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "title": "X-Men (2019) #9",
+      "image": "http://i.annihil.us/u/prod/marvel/i/mg/9/c0/5e62ac9e4f616.jpg",
+      "purchaseUrl": "http://marvel.com/comics/issue/79947/x-men_2019_9?utm_campaign=apiRef&utm_source=6d001b15224bd9411b67705ef5d04bb5",
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "title": "Old Man Quill (2019) #12",
+      "image": "http://i.annihil.us/u/prod/marvel/i/mg/f/a0/5ddc12ed8f74d.jpg",
+      "purchaseUrl": "http://marvel.com/comics/issue/73840/old_man_quill_2019_12?utm_campaign=apiRef&utm_source=6d001b15224bd9411b67705ef5d04bb5",
+      "id": 6
+    },
+    {
+      "userId": 1,
+      "title": "She-Hulk (2005) #12",
+      "image": "http://i.annihil.us/u/prod/marvel/i/mg/8/03/57644294a31d5.jpg",
+      "purchaseUrl": "http://marvel.com/comics/issue/5084/she-hulk_2005_12?utm_campaign=apiRef&utm_source=6d001b15224bd9411b67705ef5d04bb5",
+      "id": 7
+    },
+    {
+      "userId": 3,
+      "title": "Doctor Doom (2019) #1",
+      "image": "http://i.annihil.us/u/prod/marvel/i/mg/6/c0/5d9261da0d599.jpg",
+      "purchaseUrl": "http://marvel.com/comics/issue/78642/doctor_doom_2019_1?utm_campaign=apiRef&utm_source=6d001b15224bd9411b67705ef5d04bb5",
+      "id": 8
+    },
+    {
+      "userId": 3,
+      "title": "Doctor Strange By Mark Waid Vol. 4: The Choice (Trade Paperback)",
+      "image": "http://i.annihil.us/u/prod/marvel/i/mg/9/00/5e0fa33f4f008.jpg",
+      "purchaseUrl": "http://marvel.com/comics/collection/71100/doctor_strange_by_mark_waid_vol_4_the_choice_trade_paperback?utm_campaign=apiRef&utm_source=6d001b15224bd9411b67705ef5d04bb5",
+      "id": 9
+    },
+    {
+      "userId": 3,
+      "title": "Dr. Strange (2019) #2",
+      "image": "http://i.annihil.us/u/prod/marvel/i/mg/7/d0/5e2890fd87e98.jpg",
+      "purchaseUrl": "http://marvel.com/comics/issue/77847/dr_strange_2019_2?utm_campaign=apiRef&utm_source=6d001b15224bd9411b67705ef5d04bb5",
+      "id": 10
+    },
+    {
+      "userId": 1,
+      "title": "Infinity War Omnibus (Hardcover)",
+      "image": "http://i.annihil.us/u/prod/marvel/i/mg/9/d0/5c9d27f6a06d7.jpg",
+      "purchaseUrl": "http://marvel.com/comics/collection/73554/infinity_war_omnibus_hardcover?utm_campaign=apiRef&utm_source=6d001b15224bd9411b67705ef5d04bb5",
+      "id": 11
+    }
+  ]
+}
