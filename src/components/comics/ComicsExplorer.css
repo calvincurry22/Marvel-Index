@@ -89,6 +89,7 @@
     position: absolute;
 }
 .readComicsHeader {
+    margin-bottom: 0;
     text-align: center;
 }
 
@@ -104,7 +105,7 @@
 .readComicsContainer {
     display: flex;
     flex-wrap: wrap;
-    height: 580px;
+    height: 605px;
     overflow-y: auto;
     padding-left: 30px;
 }
