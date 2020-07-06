@@ -1,3 +1,47 @@
+## MARVEL INDEX
+Marvel Index was created to give Marvel comic book readers the ability
+to keep track of comics that they want to read without being forced to
+immediately make a purchase decision. It is a full CRUD app that allows
+users to search for comics from their favorite characters and save them
+to a personalized reading list that can be accessed at any time. Once a
+comic from the user's list has been read, it can be removed and stored
+on a separate list that keeps track of each comic that the user has read
+over time. Users can also have discussions with each other about
+topics of their choosing on the forum component within the app.
+
+## Technologies Used
+- ReactJS using "hooks" for application build
+- React Router
+- JSON Server
+- Cloudinary (for image uploading)
+- ReactStrap and Material UI for component design
+- Marvel API for character/comic data
+
+
+## App Setup: Follow these steps exactly
+
+1. Clone this repository onto your local machine. 
+2. `cd ` into the directory that this project creates. 
+3. In the project directory, run `npm start` to view the app in the browser at `http://localhost:3000`.
+4. Open another terminal tab and cd to the api sub-directory (src/components/api)
+5. Serve json database using json-server -p 8090 -w database.json
+6. Open the broswer to now view the functioning app. 
+
+
+## Navigating the App
+
+1. First click on the `Sign Up` button to register your first account
+2. Enter your information then click the `Register` button - this will log you into Marvel-Index
+3. Explore our features:
+- The main page is `My List`. This is where your saved comics will appear. Once you add a comic to this list, you can either mark it as "read" or delete it from the list. 
+- The `Explore Comics` page is where you can search for comics by character. Type a name into the search bar, or scroll through the character list to select a character. Once you have selected a character, you will view that character's profile and then can select comics to add to your reading list.
+- The `Read Comics` page keeps track of your comic reading history. If you have comics stored on your reading list that you've completed, click the `Mark as Read` button to create a record of that comic on this page to be tracked. 
+- Chat with other users by navigating to the `Forum`. Within the forum, select a discussion topic that you're interested in. From there, you can view all user messages related to that topic, and can enter your own messages to join the conversation! If you don't see a forum topic that you want to join, you can create your own by clicking the `Create Topic` button. 
+- Head over to the `Account` page if you need to update any of your existing account information, such as name, username, email, password, or profile picture. 
+
+
+##
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
