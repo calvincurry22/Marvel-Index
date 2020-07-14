@@ -5,7 +5,7 @@ immediately make a purchase decision. It is a full CRUD app that allows
 users to search for comics from their favorite characters and save them
 to a personalized reading list that can be accessed at any time. Once a
 comic from the user's list has been read, it can be removed and stored
-on a separate list that keeps track of each comic that the user has read
+on a separate list that keeps track of all comics that the user has read
 over time. Users can also have discussions with each other about
 topics of their choosing on the forum component within the app.
 
