@@ -3,7 +3,7 @@ import { UserContext } from "../users/UserProvider"
 import { ForumGroupsContext } from "./ForumGroupsProvider"
 import { Card, CardContent, Avatar } from "@material-ui/core"
 import { ForumContext } from "./ForumProvider"
-import { Button, Modal, ModalHeader, ModalBody } from "reactstrap"
+import { Button, Modal, ModalHeader, ModalBody, Collapse, CardBody, Badge } from "reactstrap"
 import EditIcon from '@material-ui/icons/Edit'
 import PostEditForm from "./PostEditForm"
 
@@ -20,6 +20,8 @@ export default ({ forumGroupId }) => {
     const toggle = () => setModal(!modal)
     const text = useRef()
 
+
+
     const clearText = () => {
         text.current.value = null
     }
@@ -33,28 +35,47 @@ export default ({ forumGroupId }) => {
                         const foundUser = users.find(user => user.id === post.userId)
                         const postDate = new Date(post.date)
                         const convertedDate = postDate.toLocaleString()
+                        const [isOpen, setIsOpen] = useState(false)
+                        const toggleReply = () => setIsOpen(!isOpen)
+                        const [number, setNumber] = useState(1)
+                        const addLike = () => setNumber(number + 1)
                         return (
-                            <Card key={post.id} className="forumPost">
-                                <CardContent className="postContent">
-                                    <div className="avatarHeader">
-                                        <Avatar className="userAvatar" src={foundUser.userImage} />
-                                        <p className="postHeader">{foundUser.userName}</p>
-                                        {
-                                            (post.userId === currentUserId) ? (
+                            <>
+                                <Card key={post.id} className="forumPost">
+                                    <CardContent className="postContent">
+                                        <div className="avatarHeader">
+                                            <Avatar className="userAvatar" src={foundUser.userImage} />
+                                            <p className="postHeader">{foundUser.userName}</p>
+                                            {
+                                                (post.userId === currentUserId) ? (
 
-                                                <EditIcon fontSize="small" className="editPostIcon" onClick={evt => {
-                                                    setSelectedPost(post)
-                                                    toggle()
-                                                }} />) : <div></div>
+                                                    <EditIcon fontSize="small" className="editPostIcon" onClick={evt => {
+                                                        setSelectedPost(post)
+                                                        toggle()
+                                                    }} />) : <div></div>
 
-                                        }
+                                            }
+                                        </div>
+                                        <p className="postDate">{convertedDate}</p>
+                                        <div className="postDateMessage">
+                                            <p className="postMessage">{post.message}</p>
+                                        </div>
+                                    </CardContent>
+                                </Card>
+                                <div>
+                                    <div className="postUtilities">
+                                        <p className="postLike" onClick={addLike}>Like</p>
+                                        <p className="postReplyButton" onClick={toggleReply}>Reply</p>
+                                        <Badge className="postBadge" color="danger" pill>{number}</Badge>
                                     </div>
-                                    <p className="postDate">{convertedDate}</p>
-                                    <div className="postDateMessage">
-                                        <p className="postMessage">{post.message}</p>
-                                    </div>
-                                </CardContent>
-                            </Card>
+                                    <Collapse isOpen={isOpen}>
+                                        <fieldset>
+                                            <input type="text" />
+                                            <Button>Reply</Button>
+                                        </fieldset>
+                                    </Collapse>
+                                </div>
+                            </>
                         )
                     })
                 }
