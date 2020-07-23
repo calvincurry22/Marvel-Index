@@ -223,7 +223,8 @@ h5 {
 }
 
 .postCommentsList {
-    font-size: 12px;
+    font-size: 11px;
+    width: 82%;
 }
 
 .commentAvatar {
@@ -239,4 +240,12 @@ h5 {
 
 .Likes {
     margin-right: 5px;
+}
+
+.commentMessageContainer {
+    background-color: lightsteelblue;
+    border-radius: 10px;
+    margin-left: 40px;
+    margin-top: 7px;
+    
 }

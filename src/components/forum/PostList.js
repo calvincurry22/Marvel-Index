@@ -95,16 +95,16 @@ export default ({ post, currentUserId, toggle, setSelectedPost }) => {
                             }}
                         >
                             Reply
-                                            </Button>
+                        </Button>
                     </fieldset>
                     <List className="postCommentsList">
                         {postComments &&
                             postComments.map(comment => {
                                 const commentAuthor = users.find(user => user.id === comment.userId)
                                 return (
-                                    <ListItem>
+                                    <ListItem className="commentMessageContainer">
                                         <Avatar className="commentAvatar" src={commentAuthor.userImage}></Avatar>
-                                        {comment.message}
+                                        <div className="commentMessage"><strong>{commentAuthor.name}</strong> {comment.message}</div>
                                     </ListItem>
                                 )
                             })
