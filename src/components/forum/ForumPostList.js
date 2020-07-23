@@ -1,24 +1,28 @@
 import React, { useContext, useRef, useState } from "react"
 import { UserContext } from "../users/UserProvider"
 import { ForumGroupsContext } from "./ForumGroupsProvider"
-import { Card, CardContent, Avatar } from "@material-ui/core"
+import { Card, CardContent, Avatar, List, ListItem } from "@material-ui/core"
 import { ForumContext } from "./ForumProvider"
 import { Button, Modal, ModalHeader, ModalBody, Collapse, CardBody, Badge } from "reactstrap"
-import EditIcon from '@material-ui/icons/Edit'
+
 import PostEditForm from "./PostEditForm"
+import PostList from "./PostList"
 
 export default ({ forumGroupId }) => {
-    const { users } = useContext(UserContext)
+
     const { forumGroups } = useContext(ForumGroupsContext)
-    const { forumPosts, addForumPost, editForumPost } = useContext(ForumContext)
+    const { forumPosts, forumComments, addForumPost, editForumPost, addForumComment } = useContext(ForumContext)
+    const [selectedPost, setSelectedPost] = useState({ postObj: { id: 0 } })
     const foundGroup = forumGroups.find(group => group.id === forumGroupId)
     const groupPosts = forumPosts.filter(posts => posts.forumId === foundGroup.id)
     const sortedGroupPosts = groupPosts.sort((a, b) => b.date - a.date)
     const currentUserId = parseInt(localStorage.getItem("marvel_user"))
-    const [selectedPost, setSelectedPost] = useState({ postObj: { id: 0 } })
+
     const [modal, setModal] = useState(false)
     const toggle = () => setModal(!modal)
     const text = useRef()
+
+
 
 
 
@@ -32,51 +36,7 @@ export default ({ forumGroupId }) => {
                 <h3 className="forumTopicHeader">{foundGroup.name}</h3>
                 {
                     sortedGroupPosts.map(post => {
-                        const foundUser = users.find(user => user.id === post.userId)
-                        const postDate = new Date(post.date)
-                        const convertedDate = postDate.toLocaleString()
-                        const [isOpen, setIsOpen] = useState(false)
-                        const toggleReply = () => setIsOpen(!isOpen)
-                        const [number, setNumber] = useState(1)
-                        const addLike = () => setNumber(number + 1)
-                        return (
-                            <>
-                                <Card key={post.id} className="forumPost">
-                                    <CardContent className="postContent">
-                                        <div className="avatarHeader">
-                                            <Avatar className="userAvatar" src={foundUser.userImage} />
-                                            <p className="postHeader">{foundUser.userName}</p>
-                                            {
-                                                (post.userId === currentUserId) ? (
-
-                                                    <EditIcon fontSize="small" className="editPostIcon" onClick={evt => {
-                                                        setSelectedPost(post)
-                                                        toggle()
-                                                    }} />) : <div></div>
-
-                                            }
-                                        </div>
-                                        <p className="postDate">{convertedDate}</p>
-                                        <div className="postDateMessage">
-                                            <p className="postMessage">{post.message}</p>
-                                        </div>
-                                    </CardContent>
-                                </Card>
-                                <div>
-                                    <div className="postUtilities">
-                                        <p className="postLike" onClick={addLike}>Like</p>
-                                        <p className="postReplyButton" onClick={toggleReply}>Reply</p>
-                                        <Badge className="postBadge" color="danger" pill>{number}</Badge>
-                                    </div>
-                                    <Collapse isOpen={isOpen}>
-                                        <fieldset>
-                                            <input type="text" />
-                                            <Button>Reply</Button>
-                                        </fieldset>
-                                    </Collapse>
-                                </div>
-                            </>
-                        )
+                        return <PostList post={post} currentUserId={currentUserId} toggle={toggle} setSelectedPost={setSelectedPost} />
                     })
                 }
             </div>
@@ -87,7 +47,8 @@ export default ({ forumGroupId }) => {
                         userId: currentUserId,
                         message: text.current.value,
                         forumId: foundGroup.id,
-                        date: Date.now()
+                        date: Date.now(),
+                        likes: 0
                     })
                     clearText()
                 }}>Post Message</Button>

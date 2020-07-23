@@ -160,8 +160,6 @@ h5 {
 .editPostIcon {
     color: gray;
     cursor: pointer;
-    /* position: absolute;
-    right: 30em;  */
     margin-left: 70%;
 }
 
@@ -180,6 +178,7 @@ h5 {
     display: flex;
     flex-direction: row;
     height: 12px;
+    width: 570px;
 }
 
 .postLike {
@@ -190,9 +189,54 @@ h5 {
 
 .postReplyButton {
     font-size: 10px;
-    margin-right: 80%;
+    margin-right: 5px;
+}
+
+.postCommentsButton {
+    font-size: 10px;
+      
 }
 
 .postBadge {
     font-size: 9px !important;
+    
+}
+
+.postReplyFieldset {
+    height: 25px;
+    width: 570px;
+}
+
+.postReplyInput {
+    font-size: 12px;
+    height: 20px;
+    margin-left: 40px;
+    width: 70%;
+}
+
+.postSaveReplyButton {
+    font-size: 10px !important;
+    height: 20px;
+    margin-left: 10px;
+    padding: 0px 0px 0px 0px !important;
+    width: 70px;
+}
+
+.postCommentsList {
+    font-size: 12px;
+}
+
+.commentAvatar {
+    height: 25px !important;
+    margin-right: 5px;
+    width: 25px !important;
+}
+
+.Comments {
+    height: 12px !important;
+    margin-left: 2px;
+}
+
+.Likes {
+    margin-right: 5px;
 }

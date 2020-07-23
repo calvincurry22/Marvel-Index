@@ -8,22 +8,22 @@ import "./Forum.css"
 
 
 export default () => {
-   const [modal, setModal] = useState(false)
-   const toggle = () => setModal(!modal)
-   const name = useRef()
-   const { addForumGroup } = useContext(ForumGroupsContext)
-   const [forumGroupId, setForumGroupId] = useState(1)
-   const [component, setComponent] = useState()
+    const [modal, setModal] = useState(false)
+    const toggle = () => setModal(!modal)
+    const name = useRef()
+    const { addForumGroup } = useContext(ForumGroupsContext)
+    const [forumGroupId, setForumGroupId] = useState(1)
+    const [component, setComponent] = useState()
 
-   const showForumPostsList = () => {
+    const showForumPostsList = () => {
         return <ForumPostList forumGroupId={forumGroupId} />
-   }
-
-   useEffect( () => {
-    if(forumGroupId) {
-        setComponent(showForumPostsList)
     }
-   }, [forumGroupId])
+
+    useEffect(() => {
+        if (forumGroupId) {
+            setComponent(showForumPostsList)
+        }
+    }, [forumGroupId])
 
 
     return (
@@ -31,19 +31,19 @@ export default () => {
             <div className="forumPageContainer">
                 <h1 className="forumPageHeader">Forum</h1>
                 <div className="forumGroupDiv">
-                    <Button className="createForumGroupButton"onClick={evt => {
+                    <Button className="createForumGroupButton" onClick={evt => {
                         toggle()
                     }}>Create Topic</Button>
-                    
-                    <ForumGroupList  setForumGroupId={setForumGroupId}/>
-                </div>  
+
+                    <ForumGroupList setForumGroupId={setForumGroupId} />
+                </div>
                 {component}
                 <Modal isOpen={modal} toggle={toggle}>
                     <ModalHeader toggle={toggle}>
                         <p>Create New Topic</p>
                     </ModalHeader>
                     <ModalBody>
-                        <input type="forumName" ref={name} autoFocus placeholder="type name"/>
+                        <input type="forumName" ref={name} autoFocus placeholder="type name" />
                     </ModalBody>
                     <ModalFooter>
                         <Button color="danger" onClick={evt => {
