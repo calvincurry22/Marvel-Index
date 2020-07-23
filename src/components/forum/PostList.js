@@ -1,4 +1,4 @@
-import React, { useContext, useState, useRef, useEffect } from 'react';
+import React, { useContext, useState, useRef } from 'react';
 import { UserContext } from '../users/UserProvider';
 import { ForumContext } from './ForumProvider';
 import { Card, Collapse, Badge, Button } from 'reactstrap';
@@ -6,15 +6,13 @@ import { CardContent, Avatar, List, ListItem } from '@material-ui/core';
 import EditIcon from '@material-ui/icons/Edit';
 
 export default ({ post, currentUserId, toggle, setSelectedPost }) => {
-    const { forumPosts, forumComments, addForumPost, editForumPost, addForumComment, postLikes, addLikeToPost, removeLikeFromPost } = useContext(ForumContext)
+    const { forumComments, addForumComment, postLikes, addLikeToPost, removeLikeFromPost } = useContext(ForumContext)
     const currentPostLikes = postLikes.filter(likes => likes.postId === post.id)
     const { users } = useContext(UserContext)
     const foundUser = users.find(user => user.id === post.userId)
     const postDate = new Date(post.date)
     const convertedDate = postDate.toLocaleString()
-    const [isLiked, setIsLiked] = useState()
     const [commentsOpen, setCommentsOpen] = useState(false)
-    const toggleLike = () => setIsLiked(!isLiked)
     const toggleComments = () => setCommentsOpen(!commentsOpen)
     const postComments = forumComments.filter(posts => posts.postId === post.id)
 
@@ -102,7 +100,7 @@ export default ({ post, currentUserId, toggle, setSelectedPost }) => {
                             postComments.map(comment => {
                                 const commentAuthor = users.find(user => user.id === comment.userId)
                                 return (
-                                    <ListItem className="commentMessageContainer">
+                                    <ListItem key={comment.id} className="commentMessageContainer">
                                         <Avatar className="commentAvatar" src={commentAuthor.userImage}></Avatar>
                                         <div className="commentMessage"><strong>{commentAuthor.name}</strong> {comment.message}</div>
                                     </ListItem>

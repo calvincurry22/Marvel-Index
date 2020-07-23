@@ -1,9 +1,7 @@
 import React, { useContext, useRef, useState } from "react"
-import { UserContext } from "../users/UserProvider"
 import { ForumGroupsContext } from "./ForumGroupsProvider"
-import { Card, CardContent, Avatar, List, ListItem } from "@material-ui/core"
 import { ForumContext } from "./ForumProvider"
-import { Button, Modal, ModalHeader, ModalBody, Collapse, CardBody, Badge } from "reactstrap"
+import { Button, Modal, ModalHeader, ModalBody } from "reactstrap"
 
 import PostEditForm from "./PostEditForm"
 import PostList from "./PostList"
@@ -11,7 +9,7 @@ import PostList from "./PostList"
 export default ({ forumGroupId }) => {
 
     const { forumGroups } = useContext(ForumGroupsContext)
-    const { forumPosts, forumComments, addForumPost, editForumPost, addForumComment } = useContext(ForumContext)
+    const { forumPosts, addForumPost, editForumPost } = useContext(ForumContext)
     const [selectedPost, setSelectedPost] = useState({ postObj: { id: 0 } })
     const foundGroup = forumGroups.find(group => group.id === forumGroupId)
     const groupPosts = forumPosts.filter(posts => posts.forumId === foundGroup.id)
@@ -36,7 +34,7 @@ export default ({ forumGroupId }) => {
                 <h3 className="forumTopicHeader">{foundGroup.name}</h3>
                 {
                     sortedGroupPosts.map(post => {
-                        return <PostList post={post} currentUserId={currentUserId} toggle={toggle} setSelectedPost={setSelectedPost} />
+                        return <PostList key={post.id} post={post} currentUserId={currentUserId} toggle={toggle} setSelectedPost={setSelectedPost} />
                     })
                 }
             </div>
