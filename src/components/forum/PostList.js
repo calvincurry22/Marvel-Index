@@ -10,6 +10,7 @@ export default ({ post, currentUserId, toggle, setSelectedPost }) => {
     const currentPostLikes = postLikes.filter(likes => likes.postId === post.id)
     const { users } = useContext(UserContext)
     const foundUser = users.find(user => user.id === post.userId)
+    const currentUser = users.find(user => user.id === currentUserId)
     const postDate = new Date(post.date)
     const convertedDate = postDate.toLocaleString()
     const [commentsOpen, setCommentsOpen] = useState(false)
@@ -89,7 +90,7 @@ export default ({ post, currentUserId, toggle, setSelectedPost }) => {
                             onClick={(e) => {
                                 e.preventDefault()
                                 console.log(reply.current.value)
-                                createComment(foundUser, post)
+                                createComment(currentUser, post)
                             }}
                         >
                             Reply

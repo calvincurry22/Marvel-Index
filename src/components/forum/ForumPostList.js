@@ -15,14 +15,9 @@ export default ({ forumGroupId }) => {
     const groupPosts = forumPosts.filter(posts => posts.forumId === foundGroup.id)
     const sortedGroupPosts = groupPosts.sort((a, b) => b.date - a.date)
     const currentUserId = parseInt(localStorage.getItem("marvel_user"))
-
     const [modal, setModal] = useState(false)
     const toggle = () => setModal(!modal)
     const text = useRef()
-
-
-
-
 
     const clearText = () => {
         text.current.value = null
@@ -41,14 +36,18 @@ export default ({ forumGroupId }) => {
             <fieldset className="postMessageContainer">
                 <textarea className="textarea" placeholder="Type message here..." rows="4" cols="50" ref={text} />
                 <Button className="postButton" onClick={evt => {
-                    addForumPost({
-                        userId: currentUserId,
-                        message: text.current.value,
-                        forumId: foundGroup.id,
-                        date: Date.now(),
-                        likes: 0
-                    })
-                    clearText()
+                    if (text.current.value === "") {
+                        return null;
+                    } else {
+                        addForumPost({
+                            userId: currentUserId,
+                            message: text.current.value,
+                            forumId: foundGroup.id,
+                            date: Date.now(),
+                            likes: 0
+                        })
+                        clearText()
+                    }
                 }}>Post Message</Button>
             </fieldset>
             <Modal isOpen={modal} toggle={toggle}>
