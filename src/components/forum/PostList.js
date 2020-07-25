@@ -103,7 +103,7 @@ export default ({ post, currentUserId, toggle, setSelectedPost }) => {
                                 return (
                                     <ListItem key={comment.id} className="commentMessageContainer">
                                         <Avatar className="commentAvatar" src={commentAuthor.userImage}></Avatar>
-                                        <div className="commentMessage"><strong>{commentAuthor.name}</strong> {comment.message}</div>
+                                        <div className="commentMessage"><strong>{commentAuthor.userName}</strong> {comment.message}</div>
                                     </ListItem>
                                 )
                             })
